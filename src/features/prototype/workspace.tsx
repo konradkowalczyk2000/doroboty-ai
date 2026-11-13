@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState, type FormEvent, type ReactNode } from "react";
+import { usePostHog } from "@posthog/react";
 import { Link, Navigate, useNavigate, useParams, useSearchParams } from "react-router";
 import { CheckCircle2, FileText } from "lucide-react";
 import { ConfettiBurst, type ConfettiOrigin } from "@/components/confetti-burst";
@@ -29,6 +30,10 @@ export function Field({ label, children }: { label: string; children: ReactNode 
 }
 export function PersonPicker() {
   const { state, run } = usePrototype();
+  const posthog = usePostHog();
+  const posthogConfigured = Boolean(
+    import.meta.env.VITE_PUBLIC_POSTHOG_PROJECT_TOKEN && import.meta.env.VITE_PUBLIC_POSTHOG_HOST,
+  );
   const navigate = useNavigate();
   const [params] = useSearchParams();
   const next = params.get("next");
@@ -53,6 +58,8 @@ export function PersonPicker() {
               variant="outline"
               onClick={() => {
                 run({ type: "select_person", id: person.id });
+                if (posthogConfigured)
+                  posthog.logger.info("prototype profile selected", { role: person.role });
                 navigate(
                   person.role === "candidate"
                     ? (safeNext ?? "/app")
@@ -143,6 +150,10 @@ export function WorkspaceHome() {
 }
 export function ProfilePage({ preview = false }: { preview?: boolean }) {
   const { state, run } = usePrototype();
+  const posthog = usePostHog();
+  const posthogConfigured = Boolean(
+    import.meta.env.VITE_PUBLIC_POSTHOG_PROJECT_TOKEN && import.meta.env.VITE_PUBLIC_POSTHOG_HOST,
+  );
   const person = currentPerson(state)!;
   const [message, setMessage] = useState("");
   function save(e: FormEvent<HTMLFormElement>) {
@@ -158,8 +169,10 @@ export function ProfilePage({ preview = false }: { preview?: boolean }) {
           location: String(data.get("location")),
         },
       })
-    )
+    ) {
+      if (posthogConfigured) posthog.capture("candidate_profile_saved");
       setMessage("Profil został zapisany.");
+    }
   }
   return (
     <>
@@ -234,6 +247,10 @@ export function SavedPage() {
 export function ApplyPage() {
   const { slug } = useParams();
   const { state, run } = usePrototype();
+  const posthog = usePostHog();
+  const posthogConfigured = Boolean(
+    import.meta.env.VITE_PUBLIC_POSTHOG_PROJECT_TOKEN && import.meta.env.VITE_PUBLIC_POSTHOG_HOST,
+  );
   const person = currentPerson(state)!;
   const navigate = useNavigate();
   const job = publishedJobs(state).find((x) => x.slug === slug);
@@ -312,6 +329,16 @@ export function ApplyPage() {
         consent,
       })
     ) {
+      if (posthogConfigured) {
+        const logAttributes = {
+          job_category: job!.category,
+          job_function: job!.function,
+          remote_status: job!.remoteStatus,
+          has_screening_questions: questions.length > 0,
+        };
+        posthog.capture("application_submitted", logAttributes);
+        posthog.logger.info("application submitted", logAttributes);
+      }
       submittedOnce.current = true;
       setSubmitted(true);
       if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
@@ -471,8 +498,15 @@ export function ApplyPage() {
                       answer,
                       scopeAnswers: scopePayload,
                     })
-                  )
+                  ) {
+                    if (posthogConfigured)
+                      posthog.capture("application_draft_saved", {
+                        job_category: job.category,
+                        job_function: job.function,
+                        has_screening_questions: questions.length > 0,
+                      });
                     setMessage("Szkic został zapisany.");
+                  }
                 }}
               >
                 Zapisz szkic
