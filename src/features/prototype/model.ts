@@ -2,6 +2,7 @@ import { z } from "zod";
 import marketplace from "./data/marketplace.json" with { type: "json" };
 import people from "./data/people.json" with { type: "json" };
 import type { JobWithCompany } from "@/features/jobs/types";
+import { findScopeQuestion, MAX_SCOPE_QUESTIONS } from "./scope-questions";
 
 const id = z
   .string()
@@ -53,11 +54,22 @@ export const jobSchema = z
     verificationStatus: z.enum(["unverified", "editorial", "employer_verified"]),
     sourceBrief: text.optional(),
     generatedDescription: text.optional(),
+    screeningQuestionIds: z.array(id).max(MAX_SCOPE_QUESTIONS).optional(),
   })
   .refine(
     (job) =>
       job.salaryMin === undefined || job.salaryMax === undefined || job.salaryMin <= job.salaryMax,
     { path: ["salaryMax"], message: "Salary maximum must not be below minimum" },
+  )
+  .refine(
+    (job) => {
+      const ids = job.screeningQuestionIds ?? [];
+      return (
+        new Set(ids).size === ids.length &&
+        ids.every((questionId) => findScopeQuestion(questionId)?.category === job.category)
+      );
+    },
+    { path: ["screeningQuestionIds"], message: "Unknown or mismatched screening question" },
   );
 export const profileSchema = z.object({
   name: shortText,
@@ -104,6 +116,14 @@ export const nextStages: Record<Stage, Stage[]> = {
   withdrawn: [],
   hired: [],
 };
+const cardPointSchema = z.object({ quote: text.min(1).nullable(), note: text.optional() });
+export const ownWorkCardSchema = z.object({
+  contribution: cardPointSchema,
+  project: cardPointSchema,
+  outcome: cardPointSchema,
+  question: text.min(1),
+});
+export type OwnWorkCard = z.infer<typeof ownWorkCardSchema>;
 const applicationSchema = z.object({
   id,
   candidateId: id,
@@ -115,6 +135,18 @@ const applicationSchema = z.object({
   answer: text.min(MIN_APPLICATION_ANSWER_LENGTH),
   sourceNotes: text,
   generatedAnswer: text,
+  scopeAnswers: z
+    .array(
+      z.object({
+        questionId: id,
+        question: text.min(1),
+        answer: text.min(MIN_APPLICATION_ANSWER_LENGTH),
+      }),
+    )
+    .max(MAX_SCOPE_QUESTIONS)
+    .optional(),
+  rawAnswer: text.min(20).optional(),
+  ownWorkCard: ownWorkCardSchema.optional(),
   score: z.number().int().min(0).max(100),
   summary: text,
   stage: z.enum(stages),
@@ -129,6 +161,10 @@ const draftSchema = z.object({
   notes: text,
   generated: text,
   answer: text,
+  scopeAnswers: z
+    .array(z.object({ questionId: id, answer: text }))
+    .max(MAX_SCOPE_QUESTIONS)
+    .optional(),
 });
 export const stateSchema = z
   .object({
@@ -170,6 +206,14 @@ export const stateSchema = z
       )
         problem("Invalid application reference");
       keys.add(key);
+      if (a.ownWorkCard) {
+        const raw = a.rawAnswer ?? "";
+        const { contribution, project, outcome } = a.ownWorkCard;
+        if (
+          [contribution, project, outcome].some((p) => p.quote !== null && !raw.includes(p.quote))
+        )
+          problem("Own-work card quote is not in the original answer");
+      }
       if (a.events[0]?.stage !== "submitted" || a.events.at(-1)?.stage !== a.stage)
         problem("Invalid application history");
       for (let i = 1; i < a.events.length; i++) {
@@ -201,13 +245,21 @@ export type Action =
   | { type: "select_person"; id: string | null }
   | { type: "profile"; value: z.infer<typeof profileSchema> }
   | { type: "toggle_saved"; jobId: string }
-  | { type: "draft"; jobId: string; notes: string; generated: string; answer: string }
+  | {
+      type: "draft";
+      jobId: string;
+      notes: string;
+      generated: string;
+      answer: string;
+      scopeAnswers?: { questionId: string; answer: string }[];
+    }
   | {
       type: "submit";
       jobId: string;
       notes: string;
       generated: string;
       answer: string;
+      scopeAnswers?: { questionId: string; answer: string }[];
       consent: boolean;
     }
   | { type: "stage"; applicationId: string; stage: Stage; note: string }
@@ -296,6 +348,12 @@ export function transition(
     const job = s.jobs.find((x) => x.id === action.jobId && x.publicationStatus === "published");
     if (!job) return fail("Oferta nie jest dostępna.");
     if (!action.consent) fail("Zatwierdź treść i zgodę na przesłanie aplikacji.");
+    const scopeAnswers = (job.screeningQuestionIds ?? []).map((questionId) => {
+      const answer = action.scopeAnswers?.find((x) => x.questionId === questionId)?.answer.trim();
+      if (!answer || answer.length < MIN_APPLICATION_ANSWER_LENGTH)
+        return fail("Odpowiedz na wszystkie pytania rekrutera.");
+      return { questionId, question: findScopeQuestion(questionId)?.text ?? "", answer };
+    });
     if (s.applications.some((x) => x.candidateId === p.id && x.jobId === job.id))
       fail("Aplikacja na tę ofertę została już wysłana.");
     s.applications.push(
@@ -310,6 +368,7 @@ export function transition(
         answer: action.answer,
         sourceNotes: action.notes,
         generatedAnswer: action.generated,
+        ...(scopeAnswers.length ? { scopeAnswers } : {}),
         score: p.exampleScore,
         summary: p.exampleSummary,
         stage: "submitted",

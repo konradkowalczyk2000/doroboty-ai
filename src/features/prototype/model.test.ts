@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { initialState, transition, stateSchema, type State } from "./model";
+import { scopeQuestions, scopeQuestionsFor } from "./scope-questions";
 const time = "2026-11-03T10:00:00.000Z";
 function as(state: State, id: string) {
   return transition(state, { type: "select_person", id });
@@ -136,6 +137,133 @@ describe("coherent browser scenario", () => {
     ).toThrow();
     expect(() =>
       transition(state, { type: "publish", job: { ...updated, salaryMin: 500, salaryMax: 1 } }),
+    ).toThrow();
+  });
+});
+describe("own-work card", () => {
+  const raw = "Sam zbudowałem prototyp w jeden weekend. Używał go tylko jeden dział.";
+  function withCard(quote: string | null) {
+    const s = initialState();
+    s.applications[0] = {
+      ...s.applications[0],
+      rawAnswer: raw,
+      ownWorkCard: {
+        contribution: { quote, note: "Granica wkładu" },
+        project: { quote: null },
+        outcome: { quote: "Używał go tylko jeden dział" },
+        question: "Co robił prototyp?",
+      },
+    };
+    return s;
+  }
+  it("accepts quotes that appear verbatim in the original answer, or an explicit gap", () => {
+    expect(() =>
+      stateSchema.parse(withCard("Sam zbudowałem prototyp w jeden weekend")),
+    ).not.toThrow();
+    expect(() => stateSchema.parse(withCard(null))).not.toThrow();
+  });
+  it("rejects quotes that are not in the original answer or have no original", () => {
+    expect(() => stateSchema.parse(withCard("Zbudowałem prototyp razem z zespołem"))).toThrow();
+    const noOriginal = withCard("Sam zbudowałem prototyp");
+    delete noOriginal.applications[0].rawAnswer;
+    expect(() => stateSchema.parse(noOriginal)).toThrow();
+  });
+  it("keeps older saves without a card valid", () => {
+    expect(() => stateSchema.parse(initialState())).not.toThrow();
+  });
+});
+describe("recruiter scope questions", () => {
+  function withQuestions(ids: string[]) {
+    const s = initialState();
+    s.jobs[0].screeningQuestionIds = ids;
+    return s;
+  }
+  const first = (s: State) => scopeQuestionsFor(s.jobs[0].category).map((q) => q.id);
+  const long = "Odpowiedź z wystarczającą ilością szczegółów.";
+  it("accepts up to three questions of the job category and rejects others", () => {
+    const s = initialState();
+    const ids = first(s);
+    expect(() => stateSchema.parse(withQuestions(ids.slice(0, 2)))).not.toThrow();
+    expect(() => stateSchema.parse(withQuestions(["build-users", "apply-users"]))).toThrow();
+    expect(() => stateSchema.parse(withQuestions([ids[0], ids[0]]))).toThrow();
+    expect(() => stateSchema.parse(withQuestions(["nie-ma-takiego"]))).toThrow();
+    expect(scopeQuestions.some((q) => q.category !== s.jobs[0].category)).toBe(true);
+    expect(() => stateSchema.parse(withQuestions([...ids, ...ids]))).toThrow();
+  });
+  it("requires an answer to every selected question and snapshots the question text", () => {
+    const base = withQuestions(first(initialState()).slice(0, 2));
+    const [a, b] = base.jobs[0].screeningQuestionIds!;
+    const s = as(base, "candidate-anna");
+    const submit = (scopeAnswers?: { questionId: string; answer: string }[]) =>
+      transition(
+        s,
+        {
+          type: "submit",
+          jobId: s.jobs[0].id,
+          notes: "",
+          generated: "",
+          answer: "Approved application with sufficient context.",
+          scopeAnswers,
+          consent: true,
+        },
+        time,
+        "application-scope",
+      );
+    expect(() => submit()).toThrow("Odpowiedz");
+    expect(() => submit([{ questionId: a, answer: long }])).toThrow("Odpowiedz");
+    expect(() =>
+      submit([
+        { questionId: a, answer: long },
+        { questionId: b, answer: "za krótko" },
+      ]),
+    ).toThrow("Odpowiedz");
+    const done = submit([
+      { questionId: b, answer: ` ${long} ` },
+      { questionId: a, answer: long },
+    ]);
+    const saved = done.applications.at(-1)!;
+    expect(saved.scopeAnswers?.map((x) => x.questionId)).toEqual([a, b]);
+    expect(saved.scopeAnswers?.[0].question).toBe(scopeQuestions.find((q) => q.id === a)!.text);
+    expect(saved.scopeAnswers?.[1].answer).toBe(long);
+  });
+  it("keeps jobs without questions unchanged and stores drafts with answers", () => {
+    const s = as(initialState(), "candidate-anna");
+    const done = transition(
+      s,
+      {
+        type: "submit",
+        jobId: s.jobs[0].id,
+        notes: "",
+        generated: "",
+        answer: "Approved application with sufficient context.",
+        consent: true,
+      },
+      time,
+      "application-plain",
+    );
+    expect(done.applications.at(-1)!.scopeAnswers).toBeUndefined();
+    const ids = first(s).slice(0, 1);
+    const drafted = transition(as(withQuestions(ids), "candidate-anna"), {
+      type: "draft",
+      jobId: s.jobs[0].id,
+      notes: "",
+      generated: "",
+      answer: "",
+      scopeAnswers: [{ questionId: ids[0], answer: "szkic" }],
+    });
+    expect(drafted.drafts[0].scopeAnswers).toEqual([{ questionId: ids[0], answer: "szkic" }]);
+  });
+  it("lets only the employer publish a job with matching questions", () => {
+    const s = as(initialState(), "employer-brightlabs");
+    const job = { ...s.jobs[0] };
+    const ids = scopeQuestionsFor(job.category).map((q) => q.id);
+    const published = transition(s, {
+      type: "publish",
+      job: { ...job, screeningQuestionIds: ids },
+    });
+    expect(published.jobs.find((x) => x.id === job.id)?.screeningQuestionIds).toEqual(ids);
+    expect(() =>
+      transition(s, { type: "publish", job: { ...job, screeningQuestionIds: ["nie-ma"] } }),
     ).toThrow();
   });
 });

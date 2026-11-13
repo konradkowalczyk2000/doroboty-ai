@@ -104,7 +104,7 @@ test("published job → saved offer/draft → submitted application → employer
     .fill("Szukamy osoby do badań z klientami, prototypowania i wdrażania automatyzacji obsługi.");
   await page.getByRole("button", { name: "Przygotuj opis z AI" }).click();
   await page.getByRole("button", { name: "Użyj propozycji" }).click();
-  await page.getByRole("checkbox").check();
+  await page.getByRole("checkbox", { name: "Zatwierdzam treść oferty" }).check();
   await page.getByRole("button", { name: "Opublikuj ofertę" }).click();
   await expect(
     page.getByRole("link", { name: "Product Designer do automatyzacji", exact: true }),
@@ -407,7 +407,7 @@ for (const width of [1440, 375]) {
         (key) => JSON.parse(localStorage.getItem(key)!).drafts.at(-1),
         STORAGE_KEY,
       ),
-    ).toEqual({ ...draft, answer: editedAnswer });
+    ).toEqual({ ...draft, answer: editedAnswer, scopeAnswers: [] });
     await page.reload();
     await expect(answer).toHaveValue(editedAnswer);
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(
@@ -994,4 +994,21 @@ test("candidate snapshot supports custom CV and long content at desktop and mobi
   await expect(page.getByRole("tabpanel", { name: "Odpowiedź", exact: true })).toContainText(
     record.answer,
   );
+});
+
+test("a rendering failure shows a recovery screen instead of a blank page", async ({ page }) => {
+  await page.addInitScript(() => {
+    Object.defineProperty(Intl.DateTimeFormat.prototype, "format", {
+      configurable: true,
+      get() {
+        return () => {
+          throw new Error("forced render failure");
+        };
+      },
+    });
+  });
+  await page.goto("/#/oferty");
+  await expect(page.getByRole("heading", { name: "Coś poszło nie tak" })).toBeVisible();
+  await expect(page.getByRole("button", { name: "Odśwież stronę" })).toBeVisible();
+  await expect(page.getByRole("link", { name: "Wróć do ofert" })).toBeVisible();
 });

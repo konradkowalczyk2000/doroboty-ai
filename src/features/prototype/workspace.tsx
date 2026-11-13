@@ -14,6 +14,8 @@ import { currentPerson, publishedJobs, stageLabels, MIN_APPLICATION_ANSWER_LENGT
 import { PageTitle, Empty, NotFound, Notice } from "./shell";
 import { CvAttachment } from "./cv-attachment";
 import { MatchScore } from "./match-score";
+import { OwnWorkCardCompact } from "./own-work-card";
+import { findScopeQuestion } from "./scope-questions";
 import { RecruitingApplication } from "./recruiting-application";
 import { CandidateApplication } from "./candidate-application";
 
@@ -242,6 +244,9 @@ export function ApplyPage() {
   const [consent, setConsent] = useState(false);
   const [message, setMessage] = useState("");
   const [attempted, setAttempted] = useState(false);
+  const [scopeAnswers, setScopeAnswers] = useState<Record<string, string>>(() =>
+    Object.fromEntries((draft?.scopeAnswers ?? []).map((x) => [x.questionId, x.answer])),
+  );
   const answerInput = useRef<HTMLTextAreaElement>(null);
   const sendButton = useRef<HTMLButtonElement>(null);
   const submittedOnce = useRef(false);
@@ -257,6 +262,14 @@ export function ApplyPage() {
   const answerInvalid = attempted && answerLength < MIN_APPLICATION_ANSWER_LENGTH;
   const consentInvalid = attempted && !consent;
   if (!job) return <NotFound />;
+  const questions = (job.screeningQuestionIds ?? []).flatMap((questionId) => {
+    const question = findScopeQuestion(questionId);
+    return question ? [question] : [];
+  });
+  const scopePayload = questions.map((q) => ({
+    questionId: q.id,
+    answer: scopeAnswers[q.id] ?? "",
+  }));
   const existing = state.applications.find(
     (x) => x.jobId === job.id && x.candidateId === person.id,
   );
@@ -277,11 +290,28 @@ export function ApplyPage() {
       answerInput.current?.focus();
       return;
     }
+    const unanswered = questions.find(
+      (q) => (scopeAnswers[q.id] ?? "").trim().length < MIN_APPLICATION_ANSWER_LENGTH,
+    );
+    if (unanswered) {
+      document.getElementById(`scope-${unanswered.id}`)?.focus();
+      return;
+    }
     if (!consent) {
       document.getElementById("application-consent")?.focus();
       return;
     }
-    if (run({ type: "submit", jobId: job!.id, notes, generated, answer, consent })) {
+    if (
+      run({
+        type: "submit",
+        jobId: job!.id,
+        notes,
+        generated,
+        answer,
+        scopeAnswers: scopePayload,
+        consent,
+      })
+    ) {
       submittedOnce.current = true;
       setSubmitted(true);
       if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
@@ -352,6 +382,51 @@ export function ApplyPage() {
                 : `Minimum ${MIN_APPLICATION_ANSWER_LENGTH} znaków. Obecnie: ${answerLength}.`}
             </p>
           </section>
+          {questions.length > 0 && (
+            <section
+              className="application-form-section application-answer"
+              aria-labelledby="scope-questions-title"
+            >
+              <h3 id="scope-questions-title">Pytania rekrutera</h3>
+              <p className="application-help">
+                Rekruter prosi o odpowiedzi przed zaproszeniem na rozmowę. Opisz własny zakres
+                pracy.
+              </p>
+              {questions.map((question) => {
+                const value = scopeAnswers[question.id] ?? "";
+                const invalid = attempted && value.trim().length < MIN_APPLICATION_ANSWER_LENGTH;
+                return (
+                  <div key={question.id}>
+                    <Field label={question.text}>
+                      <Textarea
+                        id={`scope-${question.id}`}
+                        disabled={submitted}
+                        required
+                        minLength={MIN_APPLICATION_ANSWER_LENGTH}
+                        maxLength={12000}
+                        aria-invalid={invalid || undefined}
+                        aria-describedby={invalid ? `scope-${question.id}-error` : undefined}
+                        value={value}
+                        onChange={(e) => {
+                          setScopeAnswers((current) => ({
+                            ...current,
+                            [question.id]: e.target.value,
+                          }));
+                          setConsent(false);
+                        }}
+                      />
+                    </Field>
+                    {invalid && (
+                      <p id={`scope-${question.id}-error`} role="alert" className="error-message">
+                        Odpowiedź jest za krótka. Wpisz co najmniej {MIN_APPLICATION_ANSWER_LENGTH}{" "}
+                        znaków (obecnie: {value.trim().length}).
+                      </p>
+                    )}
+                  </div>
+                );
+              })}
+            </section>
+          )}
           <div className="application-form-section application-submit">
             <label className="application-consent">
               <Checkbox
@@ -387,7 +462,16 @@ export function ApplyPage() {
                 disabled={submitted}
                 variant="outline"
                 onClick={() => {
-                  if (run({ type: "draft", jobId: job.id, notes, generated, answer }))
+                  if (
+                    run({
+                      type: "draft",
+                      jobId: job.id,
+                      notes,
+                      generated,
+                      answer,
+                      scopeAnswers: scopePayload,
+                    })
+                  )
                     setMessage("Szkic został zapisany.");
                 }}
               >
@@ -455,6 +539,7 @@ export function ApplicationsPage({ employer = false }: { employer?: boolean }) {
                 <MatchScore score={a.score} />
               </div>
               {employer && <p className="mt-4 text-muted-foreground">{a.summary}</p>}
+              {employer && a.ownWorkCard && <OwnWorkCardCompact card={a.ownWorkCard} />}
             </article>
           ))
         ) : (

@@ -12,7 +12,9 @@ import {
   seniorityLabels,
   contractLabels,
 } from "@/features/jobs/presentation";
+import type { JobCategory } from "@/features/jobs/types";
 import { currentPerson, jobSchema } from "./model";
+import { MAX_SCOPE_QUESTIONS, scopeQuestionsFor } from "./scope-questions";
 import { usePrototype } from "./store";
 import { Field } from "./workspace";
 import { Empty, NotFound, PageTitle } from "./shell";
@@ -78,6 +80,8 @@ export function EmployerJobEditor() {
   const [generated, setGenerated] = useState(existing?.generatedDescription ?? "");
   const [approved, setApproved] = useState(false);
   const [error, setError] = useState("");
+  const [category, setCategory] = useState<JobCategory>(existing?.category ?? "build");
+  const [questionIds, setQuestionIds] = useState<string[]>(existing?.screeningQuestionIds ?? []);
   if (id !== "nowa" && !existing) return <NotFound />;
   function publish(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -103,6 +107,7 @@ export function EmployerJobEditor() {
       locations: [String(data.get("location")).trim()],
       seniority: data.get("seniority"),
       contract: data.get("contract"),
+      screeningQuestionIds: questionIds.length ? questionIds : undefined,
       salaryMin: data.get("salaryMin") ? Number(data.get("salaryMin")) : undefined,
       salaryMax: data.get("salaryMax") ? Number(data.get("salaryMax")) : undefined,
       salaryCurrency: existing?.salaryCurrency ?? "PLN",
@@ -234,6 +239,15 @@ export function EmployerJobEditor() {
                 ariaLabel={label}
                 defaultValue={value}
                 options={Object.entries(values).map(([value, label]) => ({ value, label }))}
+                onValueChange={
+                  name === "category"
+                    ? (next) => {
+                        setCategory(next as JobCategory);
+                        setQuestionIds([]);
+                        setApproved(false);
+                      }
+                    : undefined
+                }
               />
             </Field>
           ))}
@@ -252,6 +266,32 @@ export function EmployerJobEditor() {
             <Input name="salaryMax" type="number" min="0" defaultValue={existing?.salaryMax} />
           </Field>
         </div>
+        <fieldset className="prototype-panel scope-questions">
+          <legend>Pytania o zakres pracy (opcjonalnie)</legend>
+          <p className="text-muted-foreground">
+            Kandydat odpowie na wybrane pytania w aplikacji, zanim zaprosisz go na rozmowę. Do{" "}
+            {MAX_SCOPE_QUESTIONS} pytań dla kategorii {categoryLabels[category]}.
+          </p>
+          {scopeQuestionsFor(category).map((question) => {
+            const checked = questionIds.includes(question.id);
+            return (
+              <label key={question.id} className="flex items-start gap-3">
+                <Checkbox
+                  checked={checked}
+                  disabled={!checked && questionIds.length >= MAX_SCOPE_QUESTIONS}
+                  onCheckedChange={(next) => {
+                    setQuestionIds((current) =>
+                      next ? [...current, question.id] : current.filter((x) => x !== question.id),
+                    );
+                    setApproved(false);
+                  }}
+                  aria-label={question.text}
+                />
+                <span>{question.text}</span>
+              </label>
+            );
+          })}
+        </fieldset>
         <label className="flex items-start gap-3">
           <Checkbox
             checked={approved}

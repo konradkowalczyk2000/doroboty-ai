@@ -8,3 +8,5 @@ artifacts/
 *.tsbuildinfo
 .env*
 npm-debug.log*
+build-2026*
+test-2026*

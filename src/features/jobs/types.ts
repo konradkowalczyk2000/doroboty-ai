@@ -61,6 +61,7 @@ export type Job = {
   publishedAt: string;
   expiryAt: string;
   verificationStatus: "unverified" | "editorial" | "employer_verified";
+  screeningQuestionIds?: string[];
 };
 
 export type JobWithCompany = Job & { company: Company };

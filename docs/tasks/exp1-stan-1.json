@@ -1,0 +1,780 @@
+{
+  "version": 1,
+  "activePersonId": null,
+  "companies": [
+    {
+      "id": "10000000-0000-4000-8000-000000000001",
+      "slug": "brightlabs",
+      "name": "BrightLabs",
+      "summary": "Budujemy narzędzia AI dla zespołów operacyjnych.",
+      "description": "Polski software house rozwijający produkty automatyzujące pracę zespołów finansowych i operacyjnych. Łączymy badania użytkowników, modele językowe i rygor produkcyjnego oprogramowania.",
+      "websiteUrl": "https://example.com/brightlabs",
+      "location": "Warszawa",
+      "sizeLabel": "51–200 osób"
+    },
+    {
+      "id": "10000000-0000-4000-8000-000000000002",
+      "slug": "northstar-health",
+      "name": "Northstar Health",
+      "summary": "Technologia, która oddaje czas zespołom medycznym.",
+      "description": "Europejska firma healthtech upraszczająca dokumentację i koordynację opieki. Pracujemy w środowisku regulowanym, dlatego jakość i możliwość wyjaśnienia decyzji są równie ważne jak tempo.",
+      "websiteUrl": "https://example.com/northstar",
+      "location": "Kraków / zdalnie",
+      "sizeLabel": "201–500 osób"
+    },
+    {
+      "id": "10000000-0000-4000-8000-000000000003",
+      "slug": "plain-sight",
+      "name": "Plain Sight",
+      "summary": "Studio produktowe dla ambitnych zespołów B2B.",
+      "description": "Projektujemy i wdrażamy cyfrowe produkty, które rozwiązują realne problemy biznesowe. AI traktujemy jak materiał projektowy, a nie osobną kategorię produktu.",
+      "websiteUrl": "https://example.com/plain-sight",
+      "location": "Wrocław",
+      "sizeLabel": "11–50 osób"
+    }
+  ],
+  "jobs": [
+    {
+      "id": "20000000-0000-4000-8000-000000000001",
+      "slug": "ai-product-manager",
+      "companyId": "10000000-0000-4000-8000-000000000001",
+      "title": "AI Product Manager",
+      "summary": "Poprowadź produkt od problemu operacyjnego do mierzalnego wdrożenia AI.",
+      "description": "W BrightLabs rozwijamy narzędzia dla zespołów finansowych i operacyjnych. Szukamy AI Product Managera, który poprowadzi wybrany obszar produktu: od rozmów z użytkownikami po sprawdzenie, czy wdrożenie ułatwiło im pracę. Będziesz współpracować z designerem, inżynierami i osobami prowadzącymi wdrożenia u klientów.\n\n### Co będzie na Twoim biurku\n\nProcesy naszych klientów nadal opierają się na arkuszach, wiadomościach i ręcznym sprawdzaniu dokumentów. Pomysłów na automatyzację jest więcej niż czasu na ich realizację. Twoim zadaniem będzie ustalić, które z nich warto sprawdzić i jaki zakres ma sens na początek.\n\n- Poprowadzisz discovery i zbierzesz dane o obecnym sposobie pracy: czasie obsługi, poprawkach i wyjątkach.\n- Z zespołem wybierzesz rozwiązanie, przygotujesz eksperyment i ustalisz kryteria odbioru.\n- Uzgodnisz priorytety i zależności, a po wdrożeniu wrócisz do użytkowników z pytaniami o wynik.\n\n### Na początek: jeden proces finansowy\n\nW pierwszym kwartale poznasz klientów i wybierzesz z zespołem ograniczony scenariusz do pilota. Przygotujecie prototyp, sprawdzicie go z użytkownikami i porównacie wynik z punktem wyjścia. Na koniec przedstawisz rekomendację: co rozwijamy, co poprawiamy, z czego rezygnujemy. Nie każdy problem wymaga modelu językowego.\n\n### Doświadczenie, z którego skorzystasz\n\nMasz za sobą prowadzenie produktu cyfrowego od discovery do wdrożenia. Umiesz połączyć rozmowy z analizą danych i wyjaśnić, dlaczego ograniczasz zakres. Rozmawiasz z inżynierami o jakości, koszcie i ograniczeniach rozwiązania. Nie musisz samodzielnie trenować modeli. Przyda się znajomość produktów B2B i procesów operacyjnych.\n\n### Ustalenia organizacyjne\n\nWarszawa, praca hybrydowa, umowa o pracę: 22 000–29 000 zł brutto miesięcznie. Warsztaty i spotkania planujemy wspólnie. Priorytety uzgadniasz z osobą odpowiedzialną za obszar, a zobowiązania wobec klienta z zespołem wdrożeniowym.\n\nRekrutacja to rozmowa wstępna, omówienie jednego Twojego projektu i spotkanie z zespołem. Chcemy poznać decyzje i ich konsekwencje; poufne materiały możesz zastąpić opisem.",
+      "category": "lead",
+      "function": "product",
+      "remoteStatus": "hybrid",
+      "locations": ["Warszawa"],
+      "coordinates": {
+        "latitude": 52.2297,
+        "longitude": 21.0122
+      },
+      "seniority": "senior",
+      "contract": "employment",
+      "salaryMin": 22000,
+      "salaryMax": 29000,
+      "salaryCurrency": "PLN",
+      "salaryPeriod": "month",
+      "salaryKind": "gross",
+      "publicationStatus": "published",
+      "publishedAt": "2026-09-28T09:00:00.000Z",
+      "expiryAt": "2026-11-30T23:59:59.000Z",
+      "verificationStatus": "employer_verified"
+    },
+    {
+      "id": "20000000-0000-4000-8000-000000000002",
+      "slug": "staff-ai-engineer",
+      "companyId": "10000000-0000-4000-8000-000000000002",
+      "title": "Staff AI Engineer",
+      "summary": "Buduj systemy wspierające dokumentację kliniczną — z ewaluacją, nie magią.",
+      "description": "### System, któremu można zaufać podczas pracy\n\nNorthstar Health rozwija oprogramowanie wspierające dokumentację i koordynację opieki. Personel medyczny pracuje pod presją czasu, na niepełnych danych i w kilku systemach jednocześnie. Sugestia modelu może oszczędzić czas, ale może też pominąć ważny fragment albo uzupełnić dokument informacją, której nie było w źródle. Potrzebujemy osoby, która pomoże zespołom rozpoznawać te sytuacje przed wdrożeniem i po nim.\n\nSzukamy Staff AI Engineera do zespołu platformowego. Będziesz pracować z inżynierami produktu, osobami zajmującymi się danymi oraz ekspertami domenowymi. Twój obszar obejmuje rozwiązania wykorzystywane przez kilka funkcji produktu: wspólne integracje, ewaluacje i narzędzia potrzebne do utrzymania usług.\n\n### Zakres techniczny\n\n- Integracje modeli językowych: przygotowanie kontekstu, kontrakty API, walidacja wyników i obsługa niedostępności dostawcy.\n- Zestawy ewaluacyjne opracowywane z ekspertami. Analiza pominięć, nieuprawnionych uzupełnień i odpowiedzi opartych na niewłaściwym źródle.\n- Pomiar czasu odpowiedzi, kosztu i zmian jakości po aktualizacji modelu, promptu lub danych wejściowych.\n- Mechanizmy zatwierdzania i korekty przez użytkownika oraz możliwość powrotu do wcześniejszej ścieżki obsługi.\n- Przeglądy architektury i kodu, wsparcie innych inżynierów i dokumentowanie ograniczeń rozwiązania.\n\nNie kończysz pracy na działającym prototypie. Uczestniczysz we wdrożeniu, diagnozowaniu incydentów i usuwaniu ich przyczyn. Jednocześnie nie odpowiadasz samodzielnie za decyzje o zastosowaniu klinicznym ani dopuszczeniu funkcji do użycia.\n\n### Pierwszy obszar: jakość dokumentacji\n\nZaczniesz od poznania przepływu danych, sposobu pracy personelu i istniejących testów. Z zespołem wybierzesz powtarzającą się klasę błędów, uzupełnisz zestaw kontrolny i przygotujesz zmianę z pomiarem przed i po wdrożeniu. Równolegle uporządkujesz sposób zgłaszania przypadków wymagających ręcznego sprawdzenia.\n\nPrzykładowe pytanie z tego projektu: co powinno się wydarzyć, gdy odpowiedź wygląda poprawnie, ale opiera się na nieaktualnym dokumencie? Trzeba rozstrzygnąć zarówno zachowanie usługi, jak i to, co zobaczy użytkownik. Będziesz omawiać takie przypadki z produktem i ekspertami, zamiast zamykać je wyłącznie w warstwie technicznej.\n\n### Dane i ograniczenia\n\nPracujemy w środowisku regulowanym. Dostęp do materiałów jest ograniczony do potrzeb projektu, a testy zaczynamy od danych syntetycznych lub odpowiednio przygotowanych przykładów. Dokumentacja techniczna powinna pozwalać zrozumieć, na jakich danych sprawdzono rozwiązanie i gdzie kończy się wiarygodność wyniku.\n\nW ewaluacji rozdzielamy przypadki używane podczas pracy nad rozwiązaniem od zestawu kontrolnego. Analizujemy też zachowanie przy brakujących danych, zmianie formatu wejścia i niedostępności modelu. Jeśli nie da się jeszcze bezpiecznie uruchomić funkcji, potrzebujemy jasnego opisu przyczyn i dalszych kroków.\n\n### Co powinieneś umieć na starcie\n\n- Projektować i utrzymywać usługi produkcyjne; wyjaśnić ich zachowanie przy awarii i wzroście obciążenia.\n- Swobodnie pracować w Pythonie, integrować API i stosować testy oraz przeglądy kodu.\n- Oceniać systemy wykorzystujące modele na reprezentatywnych przykładach i rozpoznawać regresje jakości.\n- Omawiać kompromisy z osobami z produktu i obszaru medycznego, również wtedy, gdy oczekiwania są sprzeczne.\n- Pomagać innym inżynierom dojść do decyzji i pozostawiać po sobie zrozumiałą dokumentację.\n\n### Dodatkowe doświadczenie\n\nPrzyda się praca z wyszukiwaniem w dokumentach, kontrolą dostępu lub systemami przetwarzającymi dane wrażliwe. Nie zakładamy, że znasz wszystkie procesy medyczne. Wiedzę domenową uzupełnisz z ekspertami; ważne, żebyś potrafił dopytać o konsekwencje błędu i przełożyć odpowiedź na zachowanie produktu.\n\n### Warunki współpracy\n\nZdalnie z Polski, B2B, 30 000–39 000 zł netto miesięcznie. Spotkania projektowe odbywają się w godzinach pracy zespołu. Kierunek architektury wypracowujesz z inżynierami, a zakres wdrożenia z produktem i ekspertami domenowymi. Podczas rekrutacji omawiamy sposób wsparcia usług, obowiązki związane z incydentami oraz zależności między zespołami.\n\n### Rozmowy z nami\n\nNajpierw uzgodnimy oczekiwania i warunki. Potem z inżynierami przejdziesz przez jeden utrzymywany przez Ciebie system: architekturę, trudną decyzję i problem, który ujawnił się po wdrożeniu. Ostatnia rozmowa dotyczy współpracy z produktem i pierwszego obszaru pracy. Nie prosimy o dane pacjentów ani poufny kod poprzedniego pracodawcy.",
+      "category": "build",
+      "function": "engineering",
+      "remoteStatus": "remote",
+      "locations": ["Polska"],
+      "coordinates": {
+        "latitude": 50.0647,
+        "longitude": 19.945
+      },
+      "seniority": "lead",
+      "contract": "b2b",
+      "salaryMin": 30000,
+      "salaryMax": 39000,
+      "salaryCurrency": "PLN",
+      "salaryPeriod": "month",
+      "salaryKind": "net",
+      "publicationStatus": "published",
+      "publishedAt": "2026-09-25T09:00:00.000Z",
+      "expiryAt": "2026-12-15T23:59:59.000Z",
+      "verificationStatus": "editorial"
+    },
+    {
+      "id": "20000000-0000-4000-8000-000000000003",
+      "slug": "senior-product-designer-ai",
+      "companyId": "10000000-0000-4000-8000-000000000003",
+      "title": "Senior Product Designer — AI",
+      "summary": "Projektuj doświadczenia, w których użytkownik rozumie i kontroluje działanie AI.",
+      "description": "Użytkownik dostaje podpowiedź AI. Czy rozumie, skąd się wzięła? Co zrobi, jeśli połowa odpowiedzi jest dobra, a połowę trzeba poprawić? W Plain Sight projektujemy właśnie takie momenty w produktach B2B. Szukamy Senior Product Designera, który chce przejść całą drogę od obserwacji pracy do sprawdzenia wdrożonego rozwiązania.\n\nPracujesz bezpośrednio z klientem, product managerem i inżynierami. Inni designerzy pomagają w przeglądach i przygotowaniu badań. Pierwszym projektem będzie narzędzie do przeglądania materiałów z podpowiedziami systemu. Zbadasz, kiedy ludzie korzystają z sugestii, kiedy ją poprawiają, a kiedy wolą pracować samodzielnie.\n\n### Od obserwacji do zachowania produktu\n\nBędziesz prowadzić rozmowy i testy, rozpisywać przepływy, prototypować oraz dopracowywać interfejs z użyciem istniejącego design systemu. Ważne są także oczekiwanie na wynik, błąd i powrót do pracy po odrzuceniu podpowiedzi. Po oddaniu projektu sprawdzisz wdrożenie z inżynierami, w tym dostępność i zachowanie na różnych urządzeniach.\n\n### Pokaż nam, jak podejmujesz decyzje\n\nSzukamy doświadczenia we wdrożonych produktach, samodzielnym prowadzeniu badań i współpracy z zespołem technicznym. Figma, komponenty i prototypowanie to codzienny warsztat. W portfolio chcemy zobaczyć kontekst, Twój wkład, odrzucone opcje i to, co zmieniło się po testach. Projekt nie musi dotyczyć AI. Materiały objęte NDA możesz zastąpić zanonimizowanym omówieniem.\n\n### Współpraca\n\nB2B, 18 000–24 000 zł netto miesięcznie. Pracujemy hybrydowo we Wrocławiu i Warszawie; warsztaty, badania oraz obecność planujemy z zespołem. Po rozmowie wstępnej wspólnie przejdziemy przez Twoje portfolio, a potem poznasz osoby z produktu. Nie przygotowujesz dla nas nowych ekranów ani bezpłatnego projektu dla klienta.",
+      "category": "apply",
+      "function": "design",
+      "remoteStatus": "hybrid",
+      "locations": ["Wrocław", "Warszawa"],
+      "coordinates": {
+        "latitude": 51.1079,
+        "longitude": 17.0385
+      },
+      "seniority": "senior",
+      "contract": "b2b",
+      "salaryMin": 18000,
+      "salaryMax": 24000,
+      "salaryCurrency": "PLN",
+      "salaryPeriod": "month",
+      "salaryKind": "net",
+      "publicationStatus": "published",
+      "publishedAt": "2026-09-20T09:00:00.000Z",
+      "expiryAt": "2026-11-20T23:59:59.000Z",
+      "verificationStatus": "employer_verified"
+    },
+    {
+      "id": "20000000-0000-4000-8000-000000000004",
+      "slug": "ai-operations-specialist",
+      "companyId": "10000000-0000-4000-8000-000000000001",
+      "title": "AI Operations Specialist",
+      "summary": "Automatyzuj powtarzalne procesy i ucz zespół bezpiecznej pracy z AI.",
+      "description": "Warszawa · stacjonarnie · umowa o pracę · 11 000–16 000 zł brutto miesięcznie.\n\nW BrightLabs szukamy osoby do usprawniania pracy finansów i obsługi klienta. Będziesz blisko ludzi, którzy dziś ręcznie przepisują dane, sprawdzają załączniki i przekazują zgłoszenia. W integracjach wspiera Cię inżynier, a za proces odpowiada jego właściciel.\n\n### Trzy rzeczy, którymi się zajmiesz\n\n1. Rozpiszesz proces razem z użytkownikami: kroki, wyjątki, dane i miejsca wymagające decyzji.\n2. Zbudujesz małe automatyzacje, sprawdzisz ich wyniki i zostawisz ręczną ścieżkę obsługi błędów.\n3. Pomożesz zespołowi zacząć z nich korzystać: instrukcja, demonstracja, poprawki po pierwszych dniach pracy.\n\n### Z czym przychodzisz\n\n- Znasz arkusze i narzędzie takie jak n8n lub Make.\n- Rozumiesz podstawy API, webhooków i JSON; umiesz opisać błąd osobie technicznej.\n- Potrafisz dopytać o nietypowy przypadek i sprawdzić treść wygenerowaną przez model.\n\n### Jak zaczniemy\n\nNa początek wybierzemy jeden powtarzalny krok do usprawnienia i zmierzymy, ile zajmuje czasu. Pierwszy kwartał ma zakończyć się używanym rozwiązaniem z instrukcją i ustalonym właścicielem utrzymania. Na rekrutacji omówimy Twoje wcześniejsze usprawnienie, a potem poznasz zespół. Wystarczy opis lub schemat bez danych klientów.",
+      "category": "apply",
+      "function": "operations",
+      "remoteStatus": "onsite",
+      "locations": ["Warszawa"],
+      "coordinates": {
+        "latitude": 52.255,
+        "longitude": 21.03
+      },
+      "seniority": "mid",
+      "contract": "employment",
+      "salaryMin": 11000,
+      "salaryMax": 16000,
+      "salaryCurrency": "PLN",
+      "salaryPeriod": "month",
+      "salaryKind": "gross",
+      "publicationStatus": "published",
+      "publishedAt": "2026-09-16T09:00:00.000Z",
+      "expiryAt": "2026-11-16T23:59:59.000Z",
+      "verificationStatus": "unverified"
+    },
+    {
+      "id": "20000000-0000-4000-8000-000000000005",
+      "slug": "growth-lead-ai-products",
+      "companyId": "10000000-0000-4000-8000-000000000002",
+      "title": "Growth Lead — AI Products",
+      "summary": "Znajdź powtarzalny sposób docierania do zespołów medycznych.",
+      "description": "Praca zdalna w Europie. Umowa o pracę, 65 000–82 000 EUR brutto rocznie. Szczegóły zatrudnienia w danym kraju ustalamy na początku rozmów.\n\n### Mamy produkt. Teraz potrzebujemy lepiej zrozumieć drogę do zakupu.\n\nNorthstar Health rozwija oprogramowanie do dokumentacji i koordynacji pracy zespołów medycznych. Szukamy Growth Leada, który pomoże znaleźć powtarzalny sposób docierania do organizacji z konkretnym problemem i gotowością do pilota. Będziesz pracować z produktem, sprzedażą, wdrożeniami i compliance.\n\nW ochronie zdrowia decyzja rzadko zapada po jednym kontakcie. Użytkownik, osoba kupująca i osoba oceniająca ryzyko mogą mieć inne pytania. Chcemy wiedzieć, co pomaga przejść do wartościowej rozmowy, a co tylko zwiększa liczbę zapisów bez dalszego ciągu.\n\n### Twoje decyzje i codzienna praca\n\n- Wybierzesz z zespołem segment do sprawdzenia, poznasz jego problemy i sposób zakupu.\n- Zaplanujesz eksperymenty dotyczące komunikacji, kanałów dotarcia i aktywacji po pierwszym kontakcie.\n- Przygotujesz treści, strony i materiały wspierające sprzedaż. Twierdzenia o produkcie sprawdzisz przed publikacją.\n- Uzgodnisz definicję kwalifikowanego kontaktu i sposób zbierania informacji o dalszym przebiegu rozmów.\n- Będziesz kontrolować uzgodniony budżet i decydować, które próby kontynuować, zmienić lub zakończyć.\n\nW pierwszym kwartale przejrzysz dotychczasowe działania i jakość danych w lejku, a następnie uruchomisz ograniczoną serię testów. Podsumowanie ma pokazać również pytania, na które nie da się jeszcze odpowiedzieć. Czas trwania zakupu trzeba uwzględnić w ocenie wyniku.\n\n### Kiedy ta rola będzie dla Ciebie dobra\n\nMasz doświadczenie w growth lub marketingu produktu B2B oraz we współpracy ze sprzedażą. Umiesz zaprojektować eksperyment, sprawdzić definicje metryk w analityce i CRM oraz ostrożnie wyciągać wnioski z małej liczby obserwacji. Potrafisz pisać i redagować komunikację. Po angielsku swobodnie rozmawiasz z zespołem i klientami w Europie.\n\nDoświadczenie w healthtech lub innym obszarze regulowanym będzie pomocne. AI może przyspieszać research i przygotowanie szkiców, ale odpowiedzialność za komunikację pozostaje po naszej stronie. Nie oczekujemy automatyzacji każdego kontaktu z klientem.\n\n### Jak będziemy współpracować\n\nSpotkania planujemy w europejskich strefach czasowych. Kierunek działań uzgadniasz z produktem i sprzedażą; większe zmiany budżetu oraz obietnice dotyczące produktu wymagają ich udziału. Rekrutacja obejmuje rozmowę wstępną, omówienie Twojego eksperymentu lub kampanii i spotkanie z zespołem. Zanonimizowane dane wystarczą. Nie prosimy o bezpłatny plan wejścia na rynek.",
+      "category": "lead",
+      "function": "marketing",
+      "remoteStatus": "remote",
+      "locations": ["Europa"],
+      "coordinates": {
+        "latitude": 52.0693,
+        "longitude": 19.4803
+      },
+      "seniority": "lead",
+      "contract": "employment",
+      "salaryMin": 65000,
+      "salaryMax": 82000,
+      "salaryCurrency": "EUR",
+      "salaryPeriod": "year",
+      "salaryKind": "gross",
+      "publicationStatus": "published",
+      "publishedAt": "2026-09-10T09:00:00.000Z",
+      "expiryAt": "2026-11-10T23:59:59.000Z",
+      "verificationStatus": "editorial"
+    },
+    {
+      "id": "20000000-0000-4000-8000-000000000006",
+      "slug": "machine-learning-engineer",
+      "companyId": "10000000-0000-4000-8000-000000000003",
+      "title": "Machine Learning Engineer",
+      "summary": "Wdrażaj małe, dobrze zmierzone funkcje ML w produktach klientów.",
+      "description": "Wrocław, hybrydowo. B2B: 19 000–26 000 zł netto miesięcznie.\n\nPlain Sight wdraża funkcje ML w produktach klientów B2B: klasyfikację zgłoszeń, wyszukiwanie podobnych dokumentów i przewidywanie zdarzeń w procesie. Szukamy Machine Learning Engineera na poziomie mid. Dołączysz do małego zespołu z inżynierami i osobą prowadzącą produkt. Trudniejsze decyzje omawiasz z bardziej doświadczonymi osobami.\n\n### Projekt, od którego zaczniesz\n\nPierwszym zadaniem będzie funkcja pomagająca porządkować zgłoszenia. Sprawdzisz dane i etykiety, przygotujesz prostą metodę porównawczą, a potem eksperyment możliwy do powtórzenia przez inną osobę. Z produktem ustalisz, jak pokazać wynik i co zrobić, gdy model nie ma wystarczającej pewności.\n\nDalej przyjdzie integracja przez API lub zadanie wsadowe, testy i pomiar po uruchomieniu. Wspierają Cię inżynierowie produktu. Czasem najważniejszym wynikiem pracy będzie wskazanie brakujących danych albo zaproponowanie prostszego rozwiązania.\n\n### Warsztat\n\n- Python i SQL, przetwarzanie danych oraz biblioteki ML, np. pandas i scikit-learn.\n- Walidacja bez wycieku informacji, analiza błędów i dobór metryk do kosztu pomyłki.\n- Git, testy, przeglądy kodu i dokumentacja pozwalająca odtworzyć eksperyment.\n- Podstawy kontenerów i integracji API albo gotowość do uzupełnienia tych umiejętności.\n\nPrzyda się doświadczenie z modelem działającym w używanym produkcie. Nie wymagamy publikacji naukowych. Liczy się też umiejętność wyjaśnienia osobie spoza obszaru danych, czego model jeszcze nie potrafi.\n\n### Po wdrożeniu\n\nObserwujesz jakość danych wejściowych, czas działania i zmiany wyników. Przygotowujesz możliwość wycofania wersji. Priorytety ustalasz z osobą prowadzącą produkt, a dostęp do danych klienta odbywa się na zasadach projektu.\n\nPorozmawiamy o Twoim doświadczeniu, potem o jednym projekcie ML — od danych po wdrożenie — i o współpracy z zespołem. Własny projekt lub zanonimizowany opis wystarczy; nie potrzebujemy poufnego kodu ani zbiorów.",
+      "category": "build",
+      "function": "data",
+      "remoteStatus": "hybrid",
+      "locations": ["Wrocław"],
+      "coordinates": {
+        "latitude": 51.125,
+        "longitude": 17.065
+      },
+      "seniority": "mid",
+      "contract": "b2b",
+      "salaryMin": 19000,
+      "salaryMax": 26000,
+      "salaryCurrency": "PLN",
+      "salaryPeriod": "month",
+      "salaryKind": "net",
+      "publicationStatus": "published",
+      "publishedAt": "2026-09-08T09:00:00.000Z",
+      "expiryAt": "2026-11-08T23:59:59.000Z",
+      "verificationStatus": "editorial"
+    }
+  ],
+  "people": [
+    {
+      "name": "Anna Kowalska",
+      "headline": "Product Manager · AI i automatyzacja",
+      "bio": "Łączę badania użytkowników, eksperymenty i pracę z zespołami technicznymi.",
+      "location": "Warszawa",
+      "id": "candidate-anna",
+      "role": "candidate",
+      "cv": "Anna Kowalska — Product Manager\n2022–2026: prowadzenie rozwoju narzędzi dla zespołów operacyjnych. Badania z 18 użytkownikami, priorytetyzacja i wdrożenie asystenta do zgłoszeń. Skrócenie czasu obsługi o 30%.\n2019–2022: Product Analyst. Analiza lejków i eksperymenty A/B.\nUmiejętności: discovery, analityka produktu, współpraca z inżynierami, prototypowanie AI.",
+      "exampleScore": 84,
+      "exampleSummary": "Doświadczenie w badaniach użytkowników i wdrażaniu automatyzacji. Warto porozmawiać o sposobie mierzenia efektów i współpracy z zespołem."
+    },
+    {
+      "name": "Marek Nowak",
+      "headline": "Product Owner · produkty B2B",
+      "bio": "Rozwijam narzędzia wspierające obsługę klientów.",
+      "location": "Kraków",
+      "id": "candidate-marek",
+      "role": "candidate",
+      "cv": "Marek Nowak — Product Owner\n2021–2026: rozwój platformy B2B. Automatyzacja obsługi zgłoszeń i skrócenie czasu odpowiedzi o 25%. Prowadzenie warsztatów z użytkownikami, praca z backlogiem i zespołem wdrożeniowym.",
+      "exampleScore": 72,
+      "exampleSummary": "Doświadczenie w produktach B2B i automatyzacji obsługi. Podczas rozmowy warto doprecyzować zakres samodzielnych decyzji."
+    },
+    {
+      "name": "Jan Kowalski",
+      "headline": "Senior Product Manager · automatyzacja procesów finansowych",
+      "bio": "Prowadzę produkty B2B dla zespołów finansowych: od rozmów z użytkownikami po wdrożenie i sprawdzenie wyniku. Wybieram najmniejszy zakres, który da się zmierzyć.",
+      "location": "Warszawa",
+      "id": "candidate-jan",
+      "role": "candidate",
+      "cv": "Jan Kowalski — Senior Product Manager\n2021–2026: Finaro Systems, Senior Product Manager. Poprowadziłem produkt do automatycznego uzgadniania faktur dla działów księgowości w firmach średniej wielkości (12 klientów B2B). Przeprowadziłem 35 wywiadów z księgowymi i zmierzyłem czas obsługi faktury przed wdrożeniem. Z zespołem 6 inżynierów i designerem wybrałem zakres pilota z jednym procesem, przygotowałem prototyp i kryteria odbioru. Po 8 tygodniach pilota czas uzgadniania skrócił się z 14 do 9 minut na fakturę, a 5 z 12 klientów przeszło na pełne wdrożenie. Zrezygnowałem z modułu opartego na modelu językowym, bo reguły dawały lepszy wynik przy niższym koszcie.\n2018–2021: Product Owner, Dokumentor. Backlog narzędzia do obiegu dokumentów, współpraca z zespołem wdrożeniowym u klientów, eksperymenty A/B w formularzach.\n2015–2018: Analityk biznesowy, bank (procesy operacyjne i raportowanie).\nUmiejętności: discovery, analiza danych (SQL, Excel), projektowanie eksperymentów, praca z inżynierami nad jakością i kosztem rozwiązań, procesy finansowe i operacyjne, prototypowanie z LLM (bez trenowania modeli).\nEdukacja: Informatyka i ekonometria, Szkoła Główna Handlowa.",
+      "exampleScore": 86,
+      "exampleSummary": "Doświadczenie w produktach B2B dla finansów, od discovery po pilota z mierzalnym wynikiem. Warto porozmawiać o decyzji, by nie użyć modelu językowego."
+    },
+    {
+      "name": "Paweł Nowak",
+      "headline": "Product Manager · dane i automatyzacja z AI",
+      "bio": "Zaczynałem jako analityk danych, dziś odpowiadam za produkty, które ułatwiają zespołom operacyjnym codzienną pracę. Rozmawiam z użytkownikami i sprawdzam wynik liczbami.",
+      "location": "Wrocław",
+      "id": "candidate-pawel",
+      "role": "candidate",
+      "cv": "Paweł Nowak — Product Manager\n2022–2026: Logiq, Product Manager. Odpowiadałem za asystenta do klasyfikacji zgłoszeń w zespołach obsługi klienta B2B (9 klientów). Zebrałem dane o obecnym procesie: czas obsługi, liczbę poprawek i wyjątków z ostatnich 6 miesięcy. Z inżynierami ustaliłem, co zautomatyzować na początek, a co zostawić ludziom, i przygotowałem eksperyment z grupą kontrolną. W pilocie na 40 konsultantach odsetek zgłoszeń kierowanych błędnie spadł z 18% do 11%. Po wdrożeniu wróciłem do konsultantów z ankietą i 12 rozmowami; na tej podstawie zmieniliśmy sposób pokazywania podpowiedzi.\n2019–2022: Analityk danych, Logiq. Raporty i modele prognozy obciążenia zespołów, analiza lejków klientów.\n2017–2019: Młodszy analityk, firma doradcza.\nUmiejętności: analiza danych (SQL, Python), eksperymenty i testy A/B, discovery z użytkownikami, rozmowy z inżynierami o jakości i kosztach, produkty B2B i procesy operacyjne, praca z LLM przez API (bez trenowania modeli).\nEdukacja: Matematyka stosowana, Politechnika Wrocławska.",
+      "exampleScore": 79,
+      "exampleSummary": "Mocne zaplecze analityczne i doświadczenie w pilocie z grupą kontrolną. Warto porozmawiać o tym, co zostawiono ludziom, a co zautomatyzowano."
+    },
+    {
+      "name": "Jolanta Woźniak",
+      "headline": "Lead Product Manager · wdrożenia AI w procesach operacyjnych",
+      "bio": "Łączę perspektywę wdrożeniową i produktową. Pracuję blisko klientów i zespołów technicznych, a rekomendacje opieram na danych z pilota.",
+      "location": "Warszawa",
+      "id": "candidate-jolanta",
+      "role": "candidate",
+      "cv": "Jolanta Woźniak — Lead Product Manager\n2020–2026: Proxima Solutions, Lead Product Manager (zespół 3 PM). Odpowiadałam za linię produktów do automatyzacji przetwarzania dokumentów dla działów operacyjnych i finansowych (B2B, 20 klientów). Poprowadziłam discovery w 6 firmach: obserwacje pracy, 40 wywiadów, pomiar czasu obsługi i liczby poprawek. Z zespołem wdrożeniowym i inżynierami wybrałam jeden proces do pilota, ustaliłam kryteria odbioru i priorytety. Pilot z 3 klientami skrócił czas przetwarzania dokumentu o 35%, a po wdrożeniu przeprowadziłam przegląd wyniku z użytkownikami. Przedstawiłam zarządowi rekomendację: rozwijamy ekstrakcję danych z dokumentów, poprawiamy walidację, rezygnujemy z automatycznych odpowiedzi do klientów.\n2016–2020: Konsultantka wdrożeniowa, Proxima Solutions. Prowadzenie wdrożeń u klientów, warsztaty z użytkownikami, analiza procesów.\n2013–2016: Specjalistka ds. procesów operacyjnych, firma logistyczna.\nUmiejętności: discovery i warsztaty, analiza danych, priorytetyzacja i zarządzanie zależnościami, współpraca z inżynierami nad jakością i kosztem rozwiązań, procesy operacyjne i finansowe, wdrażanie rozwiązań z modelami językowymi (bez trenowania modeli).\nEdukacja: Zarządzanie i inżynieria produkcji, Politechnika Łódzka.",
+      "exampleScore": 90,
+      "exampleSummary": "Doświadczenie w prowadzeniu produktu od discovery do wdrożenia w B2B i operacjach. Warto porozmawiać o kryteriach wyboru pilota i rezygnacji z części zakresu."
+    },
+    {
+      "name": "Karolina Wiśniewska",
+      "headline": "Rekruterka · BrightLabs",
+      "bio": "",
+      "location": "Warszawa",
+      "id": "employer-brightlabs",
+      "role": "employer",
+      "companyId": "10000000-0000-4000-8000-000000000001",
+      "cv": "",
+      "exampleScore": 0,
+      "exampleSummary": ""
+    },
+    {
+      "name": "Tomasz Zieliński",
+      "headline": "Hiring Manager · Northstar Health",
+      "bio": "",
+      "location": "Kraków",
+      "id": "employer-northstar",
+      "role": "employer",
+      "companyId": "10000000-0000-4000-8000-000000000002",
+      "cv": "",
+      "exampleScore": 0,
+      "exampleSummary": ""
+    },
+    {
+      "name": "Prowadzący",
+      "headline": "Materiały case study",
+      "bio": "",
+      "location": "Warszawa",
+      "id": "operator",
+      "role": "operator",
+      "cv": "",
+      "exampleScore": 0,
+      "exampleSummary": ""
+    },
+    {
+      "name": "Piotr Lis",
+      "headline": "Kandydat do testu EXP1 (dane fikcyjne)",
+      "bio": "",
+      "location": "Warszawa",
+      "id": "exp1-1-1",
+      "role": "candidate",
+      "cv": "Piotr Lis: CV na potrzeby testu EXP1 (dane fikcyjne). Doświadczenie opisano w aplikacji.",
+      "exampleScore": 91,
+      "exampleSummary": "Przykładowe podsumowanie scenariusza (dane fikcyjne)."
+    },
+    {
+      "name": "Ewa Mazur",
+      "headline": "Kandydat do testu EXP1 (dane fikcyjne)",
+      "bio": "",
+      "location": "Warszawa",
+      "id": "exp1-1-2",
+      "role": "candidate",
+      "cv": "Ewa Mazur: CV na potrzeby testu EXP1 (dane fikcyjne). Doświadczenie opisano w aplikacji.",
+      "exampleScore": 74,
+      "exampleSummary": "Przykładowe podsumowanie scenariusza (dane fikcyjne)."
+    },
+    {
+      "name": "Jan Dąbrowski",
+      "headline": "Kandydat do testu EXP1 (dane fikcyjne)",
+      "bio": "",
+      "location": "Warszawa",
+      "id": "exp1-1-3",
+      "role": "candidate",
+      "cv": "Jan Dąbrowski: CV na potrzeby testu EXP1 (dane fikcyjne). Doświadczenie opisano w aplikacji.",
+      "exampleScore": 83,
+      "exampleSummary": "Przykładowe podsumowanie scenariusza (dane fikcyjne)."
+    },
+    {
+      "name": "Agnieszka Krawczyk",
+      "headline": "Kandydat do testu EXP1 (dane fikcyjne)",
+      "bio": "",
+      "location": "Warszawa",
+      "id": "exp1-1-4",
+      "role": "candidate",
+      "cv": "Agnieszka Krawczyk: CV na potrzeby testu EXP1 (dane fikcyjne). Doświadczenie opisano w aplikacji.",
+      "exampleScore": 88,
+      "exampleSummary": "Przykładowe podsumowanie scenariusza (dane fikcyjne)."
+    },
+    {
+      "name": "Tomasz Wrona",
+      "headline": "Kandydat do testu EXP1 (dane fikcyjne)",
+      "bio": "",
+      "location": "Warszawa",
+      "id": "exp1-1-5",
+      "role": "candidate",
+      "cv": "Tomasz Wrona: CV na potrzeby testu EXP1 (dane fikcyjne). Doświadczenie opisano w aplikacji.",
+      "exampleScore": 69,
+      "exampleSummary": "Przykładowe podsumowanie scenariusza (dane fikcyjne)."
+    },
+    {
+      "name": "Natalia Sobczak",
+      "headline": "Kandydat do testu EXP1 (dane fikcyjne)",
+      "bio": "",
+      "location": "Warszawa",
+      "id": "exp1-1-6",
+      "role": "candidate",
+      "cv": "Natalia Sobczak: CV na potrzeby testu EXP1 (dane fikcyjne). Doświadczenie opisano w aplikacji.",
+      "exampleScore": 77,
+      "exampleSummary": "Przykładowe podsumowanie scenariusza (dane fikcyjne)."
+    },
+    {
+      "name": "Michał Pawlak",
+      "headline": "Kandydat do testu EXP1 (dane fikcyjne)",
+      "bio": "",
+      "location": "Warszawa",
+      "id": "exp1-2-1",
+      "role": "candidate",
+      "cv": "Michał Pawlak: CV na potrzeby testu EXP1 (dane fikcyjne). Doświadczenie opisano w aplikacji.",
+      "exampleScore": 90,
+      "exampleSummary": "Przykładowe podsumowanie scenariusza (dane fikcyjne)."
+    },
+    {
+      "name": "Joanna Baran",
+      "headline": "Kandydat do testu EXP1 (dane fikcyjne)",
+      "bio": "",
+      "location": "Warszawa",
+      "id": "exp1-2-2",
+      "role": "candidate",
+      "cv": "Joanna Baran: CV na potrzeby testu EXP1 (dane fikcyjne). Doświadczenie opisano w aplikacji.",
+      "exampleScore": 80,
+      "exampleSummary": "Przykładowe podsumowanie scenariusza (dane fikcyjne)."
+    },
+    {
+      "name": "Krzysztof Zając",
+      "headline": "Kandydat do testu EXP1 (dane fikcyjne)",
+      "bio": "",
+      "location": "Warszawa",
+      "id": "exp1-2-3",
+      "role": "candidate",
+      "cv": "Krzysztof Zając: CV na potrzeby testu EXP1 (dane fikcyjne). Doświadczenie opisano w aplikacji.",
+      "exampleScore": 72,
+      "exampleSummary": "Przykładowe podsumowanie scenariusza (dane fikcyjne)."
+    },
+    {
+      "name": "Barbara Michalska",
+      "headline": "Kandydat do testu EXP1 (dane fikcyjne)",
+      "bio": "",
+      "location": "Warszawa",
+      "id": "exp1-2-4",
+      "role": "candidate",
+      "cv": "Barbara Michalska: CV na potrzeby testu EXP1 (dane fikcyjne). Doświadczenie opisano w aplikacji.",
+      "exampleScore": 86,
+      "exampleSummary": "Przykładowe podsumowanie scenariusza (dane fikcyjne)."
+    },
+    {
+      "name": "Adam Kubiak",
+      "headline": "Kandydat do testu EXP1 (dane fikcyjne)",
+      "bio": "",
+      "location": "Warszawa",
+      "id": "exp1-2-5",
+      "role": "candidate",
+      "cv": "Adam Kubiak: CV na potrzeby testu EXP1 (dane fikcyjne). Doświadczenie opisano w aplikacji.",
+      "exampleScore": 65,
+      "exampleSummary": "Przykładowe podsumowanie scenariusza (dane fikcyjne)."
+    },
+    {
+      "name": "Magdalena Rutkowska",
+      "headline": "Kandydat do testu EXP1 (dane fikcyjne)",
+      "bio": "",
+      "location": "Warszawa",
+      "id": "exp1-2-6",
+      "role": "candidate",
+      "cv": "Magdalena Rutkowska: CV na potrzeby testu EXP1 (dane fikcyjne). Doświadczenie opisano w aplikacji.",
+      "exampleScore": 71,
+      "exampleSummary": "Przykładowe podsumowanie scenariusza (dane fikcyjne)."
+    }
+  ],
+  "applications": [
+    {
+      "id": "exp1-app-1-1",
+      "candidateId": "exp1-1-1",
+      "jobId": "20000000-0000-4000-8000-000000000001",
+      "companyId": "10000000-0000-4000-8000-000000000001",
+      "jobTitle": "AI Product Manager",
+      "candidateName": "Piotr Lis",
+      "cv": "Piotr Lis: CV na potrzeby testu EXP1 (dane fikcyjne). Doświadczenie opisano w aplikacji.",
+      "answer": "Jestem doświadczonym specjalistą od produktów AI, który skutecznie łączy perspektywę użytkownika, technologię i wartość biznesową w projektach automatyzacji.",
+      "sourceNotes": "",
+      "generatedAnswer": "",
+      "score": 91,
+      "summary": "Przykładowe podsumowanie scenariusza (dane fikcyjne).",
+      "stage": "submitted",
+      "events": [
+        {
+          "stage": "submitted",
+          "at": "2026-11-09T09:00:00.000Z",
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "exp1-app-1-2",
+      "candidateId": "exp1-1-2",
+      "jobId": "20000000-0000-4000-8000-000000000001",
+      "companyId": "10000000-0000-4000-8000-000000000001",
+      "jobTitle": "AI Product Manager",
+      "candidateName": "Ewa Mazur",
+      "cv": "Ewa Mazur: CV na potrzeby testu EXP1 (dane fikcyjne). Doświadczenie opisano w aplikacji.",
+      "answer": "Poprowadziłem rozwój systemu klasyfikacji zgłoszeń, od pierwszej wersji reguł po wdrożenie w dziale obsługi, we współpracy z inżynierami i designerami.",
+      "sourceNotes": "",
+      "generatedAnswer": "",
+      "score": 74,
+      "summary": "Przykładowe podsumowanie scenariusza (dane fikcyjne).",
+      "stage": "submitted",
+      "events": [
+        {
+          "stage": "submitted",
+          "at": "2026-11-09T09:00:00.000Z",
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "exp1-app-1-3",
+      "candidateId": "exp1-1-3",
+      "jobId": "20000000-0000-4000-8000-000000000001",
+      "companyId": "10000000-0000-4000-8000-000000000001",
+      "jobTitle": "AI Product Manager",
+      "candidateName": "Jan Dąbrowski",
+      "cv": "Jan Dąbrowski: CV na potrzeby testu EXP1 (dane fikcyjne). Doświadczenie opisano w aplikacji.",
+      "answer": "Odpowiadałem za strategię i roadmapę narzędzia do analizy dokumentów, koordynując zespoły i adopcję rozwiązania, co przełożyło się na usprawnienie procesów i satysfakcję użytkowników.",
+      "sourceNotes": "",
+      "generatedAnswer": "",
+      "score": 83,
+      "summary": "Przykładowe podsumowanie scenariusza (dane fikcyjne).",
+      "stage": "submitted",
+      "events": [
+        {
+          "stage": "submitted",
+          "at": "2026-11-09T09:00:00.000Z",
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "exp1-app-1-4",
+      "candidateId": "exp1-1-4",
+      "jobId": "20000000-0000-4000-8000-000000000001",
+      "companyId": "10000000-0000-4000-8000-000000000001",
+      "jobTitle": "AI Product Manager",
+      "candidateName": "Agnieszka Krawczyk",
+      "cv": "Agnieszka Krawczyk: CV na potrzeby testu EXP1 (dane fikcyjne). Doświadczenie opisano w aplikacji.",
+      "answer": "Z powodzeniem wdrożyłem chatbota HR, który usprawnił komunikację z pracownikami w zakresie urlopów i benefitów.",
+      "sourceNotes": "",
+      "generatedAnswer": "",
+      "score": 88,
+      "summary": "Przykładowe podsumowanie scenariusza (dane fikcyjne).",
+      "stage": "submitted",
+      "events": [
+        {
+          "stage": "submitted",
+          "at": "2026-11-09T09:00:00.000Z",
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "exp1-app-1-5",
+      "candidateId": "exp1-1-5",
+      "jobId": "20000000-0000-4000-8000-000000000001",
+      "companyId": "10000000-0000-4000-8000-000000000001",
+      "jobTitle": "AI Product Manager",
+      "candidateName": "Tomasz Wrona",
+      "cv": "Tomasz Wrona: CV na potrzeby testu EXP1 (dane fikcyjne). Doświadczenie opisano w aplikacji.",
+      "answer": "Zainicjowałem i rozwijałem rozwiązanie AI, które zostało wdrożone przez zespół platformy; z projektu wyniosłem cenne wnioski o mierzeniu adopcji.",
+      "sourceNotes": "",
+      "generatedAnswer": "",
+      "score": 69,
+      "summary": "Przykładowe podsumowanie scenariusza (dane fikcyjne).",
+      "stage": "submitted",
+      "events": [
+        {
+          "stage": "submitted",
+          "at": "2026-11-09T09:00:00.000Z",
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "exp1-app-1-6",
+      "candidateId": "exp1-1-6",
+      "jobId": "20000000-0000-4000-8000-000000000001",
+      "companyId": "10000000-0000-4000-8000-000000000001",
+      "jobTitle": "AI Product Manager",
+      "candidateName": "Natalia Sobczak",
+      "cv": "Natalia Sobczak: CV na potrzeby testu EXP1 (dane fikcyjne). Doświadczenie opisano w aplikacji.",
+      "answer": "Na podstawie badań z użytkownikami zdefiniowałem wymagania do asystenta AI wdrożonego we współpracy z zewnętrznym dostawcą.",
+      "sourceNotes": "",
+      "generatedAnswer": "",
+      "score": 77,
+      "summary": "Przykładowe podsumowanie scenariusza (dane fikcyjne).",
+      "stage": "submitted",
+      "events": [
+        {
+          "stage": "submitted",
+          "at": "2026-11-09T09:00:00.000Z",
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "exp1-app-2-1",
+      "candidateId": "exp1-2-1",
+      "jobId": "20000000-0000-4000-8000-000000000002",
+      "companyId": "10000000-0000-4000-8000-000000000002",
+      "jobTitle": "Staff AI Engineer",
+      "candidateName": "Michał Pawlak",
+      "cv": "Michał Pawlak: CV na potrzeby testu EXP1 (dane fikcyjne). Doświadczenie opisano w aplikacji.",
+      "answer": "Jako doświadczony ekspert od transformacji cyfrowej skutecznie przekładam technologie AI na mierzalne efekty biznesowe, szybko się ucząc i budując dobre relacje w zespołach.",
+      "sourceNotes": "",
+      "generatedAnswer": "",
+      "rawAnswer": "Jestem entuzjastą AI i od lat pomagam firmom w transformacji cyfrowej. Wiem, jak przekuć nowe technologie w realne efekty. Szybko się uczę i dobrze pracuję w zespole.",
+      "ownWorkCard": {
+        "contribution": {
+          "quote": null,
+          "note": "Tekst nie mówi, co kandydat zrobił sam."
+        },
+        "project": {
+          "quote": "pomagam firmom w transformacji cyfrowej",
+          "note": "Ogólnik, bez nazwy projektu."
+        },
+        "outcome": {
+          "quote": null,
+          "note": "Brak efektu."
+        },
+        "question": "Opisz jeden projekt AI, w którym brałeś udział: co było Twoją częścią?"
+      },
+      "score": 90,
+      "summary": "Przykładowe podsumowanie scenariusza (dane fikcyjne).",
+      "stage": "submitted",
+      "events": [
+        {
+          "stage": "submitted",
+          "at": "2026-11-09T09:00:00.000Z",
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "exp1-app-2-2",
+      "candidateId": "exp1-2-2",
+      "jobId": "20000000-0000-4000-8000-000000000002",
+      "companyId": "10000000-0000-4000-8000-000000000002",
+      "jobTitle": "Staff AI Engineer",
+      "candidateName": "Joanna Baran",
+      "cv": "Joanna Baran: CV na potrzeby testu EXP1 (dane fikcyjne). Doświadczenie opisano w aplikacji.",
+      "answer": "Poprowadziłem wdrożenie narzędzia AI do generowania ofert, współpracując ze sprzedażą i IT i dostarczając rozwiązanie w terminie.",
+      "sourceNotes": "",
+      "generatedAnswer": "",
+      "rawAnswer": "Zarządzałem projektem wdrożenia narzędzia do generowania ofert. Pracowałem z działem sprzedaży i IT. Narzędzie zostało oddane w terminie.",
+      "ownWorkCard": {
+        "contribution": {
+          "quote": "Zarządzałem projektem wdrożenia narzędzia do generowania ofert",
+          "note": "Zarządzanie, nie wiadomo, co zrobił sam."
+        },
+        "project": {
+          "quote": "narzędzia do generowania ofert"
+        },
+        "outcome": {
+          "quote": "Narzędzie zostało oddane w terminie",
+          "note": "Termin, nie użycie."
+        },
+        "question": "Czy handlowcy używali narzędzia po oddaniu i ilu?"
+      },
+      "score": 80,
+      "summary": "Przykładowe podsumowanie scenariusza (dane fikcyjne).",
+      "stage": "submitted",
+      "events": [
+        {
+          "stage": "submitted",
+          "at": "2026-11-09T09:00:00.000Z",
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "exp1-app-2-3",
+      "candidateId": "exp1-2-3",
+      "jobId": "20000000-0000-4000-8000-000000000002",
+      "companyId": "10000000-0000-4000-8000-000000000002",
+      "jobTitle": "Staff AI Engineer",
+      "candidateName": "Krzysztof Zając",
+      "cv": "Krzysztof Zając: CV na potrzeby testu EXP1 (dane fikcyjne). Doświadczenie opisano w aplikacji.",
+      "answer": "Wdrożyłem automatyzację przepisywania wiadomości od klientów do CRM, która oszczędza zespołowi czas i usprawnia pracę działu.",
+      "sourceNotes": "",
+      "generatedAnswer": "",
+      "rawAnswer": "Sam zbudowałem w Make scenariusz, który przepisuje maile od klientów do CRM. Używa go dziś cały dział, około 15 osób, oszczędność to ok. 4 godzin tygodniowo na osobę, mierzone przez ich własne zgłoszenia. Konfigurację wyjątków robił jednak kolega z IT.",
+      "ownWorkCard": {
+        "contribution": {
+          "quote": "Sam zbudowałem w Make scenariusz, który przepisuje maile od klientów do CRM",
+          "note": "Granica wkładu: „Konfigurację wyjątków robił jednak kolega z IT”."
+        },
+        "project": {
+          "quote": "przepisuje maile od klientów do CRM"
+        },
+        "outcome": {
+          "quote": "Używa go dziś cały dział, około 15 osób, oszczędność to ok. 4 godzin tygodniowo na osobę"
+        },
+        "question": "Jak mierzono oszczędność czasu?"
+      },
+      "score": 72,
+      "summary": "Przykładowe podsumowanie scenariusza (dane fikcyjne).",
+      "stage": "submitted",
+      "events": [
+        {
+          "stage": "submitted",
+          "at": "2026-11-09T09:00:00.000Z",
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "exp1-app-2-4",
+      "candidateId": "exp1-2-4",
+      "jobId": "20000000-0000-4000-8000-000000000002",
+      "companyId": "10000000-0000-4000-8000-000000000002",
+      "jobTitle": "Staff AI Engineer",
+      "candidateName": "Barbara Michalska",
+      "cv": "Barbara Michalska: CV na potrzeby testu EXP1 (dane fikcyjne). Doświadczenie opisano w aplikacji.",
+      "answer": "Poprowadziłem wdrożenie Copilota w organizacji, wspierając pracowników szkoleniami i budując kulturę pracy z AI, co spotkało się z wysokim zadowoleniem zespołów.",
+      "sourceNotes": "",
+      "generatedAnswer": "",
+      "rawAnswer": "Odpowiadałem za wprowadzenie Copilota w firmie. Szkoliłem pracowników i budowałem kulturę pracy z AI. Zespoły są zadowolone.",
+      "ownWorkCard": {
+        "contribution": {
+          "quote": "Szkoliłem pracowników"
+        },
+        "project": {
+          "quote": "wprowadzenie Copilota w firmie"
+        },
+        "outcome": {
+          "quote": "Zespoły są zadowolone",
+          "note": "Bez miary."
+        },
+        "question": "Ilu pracowników przeszkoliłeś i czy korzystają z Copilota po szkoleniu?"
+      },
+      "score": 86,
+      "summary": "Przykładowe podsumowanie scenariusza (dane fikcyjne).",
+      "stage": "submitted",
+      "events": [
+        {
+          "stage": "submitted",
+          "at": "2026-11-09T09:00:00.000Z",
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "exp1-app-2-5",
+      "candidateId": "exp1-2-5",
+      "jobId": "20000000-0000-4000-8000-000000000002",
+      "companyId": "10000000-0000-4000-8000-000000000002",
+      "jobTitle": "Staff AI Engineer",
+      "candidateName": "Adam Kubiak",
+      "cv": "Adam Kubiak: CV na potrzeby testu EXP1 (dane fikcyjne). Doświadczenie opisano w aplikacji.",
+      "answer": "Kierowałem zespołem analityków w projekcie scoringu leadów, odpowiadając za priorytety i harmonogram.",
+      "sourceNotes": "",
+      "generatedAnswer": "",
+      "rawAnswer": "Prowadziłem zespół analityków przy projekcie scoringu leadów, ale model zbudowali analitycy. Ja ustalałem priorytety i pilnowałem harmonogramu. Nie wiem, czy handlowcy używali wyniku po moim odejściu.",
+      "ownWorkCard": {
+        "contribution": {
+          "quote": "Ja ustalałem priorytety i pilnowałem harmonogramu",
+          "note": "Granica wkładu: „model zbudowali analitycy”."
+        },
+        "project": {
+          "quote": "projekcie scoringu leadów"
+        },
+        "outcome": {
+          "quote": null,
+          "note": "Autor sam pisze, że nie zna efektu."
+        },
+        "question": "Czy wiesz, czy handlowcy zmienili sposób pracy dzięki scoringowi?"
+      },
+      "score": 65,
+      "summary": "Przykładowe podsumowanie scenariusza (dane fikcyjne).",
+      "stage": "submitted",
+      "events": [
+        {
+          "stage": "submitted",
+          "at": "2026-11-09T09:00:00.000Z",
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "exp1-app-2-6",
+      "candidateId": "exp1-2-6",
+      "jobId": "20000000-0000-4000-8000-000000000002",
+      "companyId": "10000000-0000-4000-8000-000000000002",
+      "jobTitle": "Staff AI Engineer",
+      "candidateName": "Magdalena Rutkowska",
+      "cv": "Magdalena Rutkowska: CV na potrzeby testu EXP1 (dane fikcyjne). Doświadczenie opisano w aplikacji.",
+      "answer": "Wdrożyłem i optymalizowałem asystenta wsparcia, co przełożyło się na wyraźny spadek liczby eskalacji.",
+      "sourceNotes": "",
+      "generatedAnswer": "",
+      "rawAnswer": "Napisałem sam instrukcje i 40 przykładowych odpowiedzi dla asystenta wsparcia, potem przez miesiąc co tydzień poprawiałem je po uwagach konsultantów. Liczba eskalacji spadła z 31% do 22% według raportu z systemu zgłoszeń. Nie byłem właścicielem integracji z systemem.",
+      "ownWorkCard": {
+        "contribution": {
+          "quote": "Napisałem sam instrukcje i 40 przykładowych odpowiedzi dla asystenta wsparcia",
+          "note": "Granica wkładu: „Nie byłem właścicielem integracji z systemem”."
+        },
+        "project": {
+          "quote": "asystenta wsparcia"
+        },
+        "outcome": {
+          "quote": "Liczba eskalacji spadła z 31% do 22% według raportu z systemu zgłoszeń"
+        },
+        "question": "Kto dziś utrzymuje instrukcje asystenta?"
+      },
+      "score": 71,
+      "summary": "Przykładowe podsumowanie scenariusza (dane fikcyjne).",
+      "stage": "submitted",
+      "events": [
+        {
+          "stage": "submitted",
+          "at": "2026-11-09T09:00:00.000Z",
+          "note": ""
+        }
+      ]
+    }
+  ],
+  "saved": [],
+  "drafts": []
+}

@@ -22,6 +22,39 @@
     "exampleSummary": "Doświadczenie w produktach B2B i automatyzacji obsługi. Podczas rozmowy warto doprecyzować zakres samodzielnych decyzji."
   },
   {
+    "id": "candidate-jan",
+    "role": "candidate",
+    "name": "Jan Kowalski",
+    "headline": "Senior Product Manager · automatyzacja procesów finansowych",
+    "bio": "Prowadzę produkty B2B dla zespołów finansowych: od rozmów z użytkownikami po wdrożenie i sprawdzenie wyniku. Wybieram najmniejszy zakres, który da się zmierzyć.",
+    "location": "Warszawa",
+    "cv": "Jan Kowalski — Senior Product Manager\n2021–2026: Finaro Systems, Senior Product Manager. Poprowadziłem produkt do automatycznego uzgadniania faktur dla działów księgowości w firmach średniej wielkości (12 klientów B2B). Przeprowadziłem 35 wywiadów z księgowymi i zmierzyłem czas obsługi faktury przed wdrożeniem. Z zespołem 6 inżynierów i designerem wybrałem zakres pilota z jednym procesem, przygotowałem prototyp i kryteria odbioru. Po 8 tygodniach pilota czas uzgadniania skrócił się z 14 do 9 minut na fakturę, a 5 z 12 klientów przeszło na pełne wdrożenie. Zrezygnowałem z modułu opartego na modelu językowym, bo reguły dawały lepszy wynik przy niższym koszcie.\n2018–2021: Product Owner, Dokumentor. Backlog narzędzia do obiegu dokumentów, współpraca z zespołem wdrożeniowym u klientów, eksperymenty A/B w formularzach.\n2015–2018: Analityk biznesowy, bank (procesy operacyjne i raportowanie).\nUmiejętności: discovery, analiza danych (SQL, Excel), projektowanie eksperymentów, praca z inżynierami nad jakością i kosztem rozwiązań, procesy finansowe i operacyjne, prototypowanie z LLM (bez trenowania modeli).\nEdukacja: Informatyka i ekonometria, Szkoła Główna Handlowa.",
+    "exampleScore": 86,
+    "exampleSummary": "Doświadczenie w produktach B2B dla finansów, od discovery po pilota z mierzalnym wynikiem. Warto porozmawiać o decyzji, by nie użyć modelu językowego."
+  },
+  {
+    "id": "candidate-pawel",
+    "role": "candidate",
+    "name": "Paweł Nowak",
+    "headline": "Product Manager · dane i automatyzacja z AI",
+    "bio": "Zaczynałem jako analityk danych, dziś odpowiadam za produkty, które ułatwiają zespołom operacyjnym codzienną pracę. Rozmawiam z użytkownikami i sprawdzam wynik liczbami.",
+    "location": "Wrocław",
+    "cv": "Paweł Nowak — Product Manager\n2022–2026: Logiq, Product Manager. Odpowiadałem za asystenta do klasyfikacji zgłoszeń w zespołach obsługi klienta B2B (9 klientów). Zebrałem dane o obecnym procesie: czas obsługi, liczbę poprawek i wyjątków z ostatnich 6 miesięcy. Z inżynierami ustaliłem, co zautomatyzować na początek, a co zostawić ludziom, i przygotowałem eksperyment z grupą kontrolną. W pilocie na 40 konsultantach odsetek zgłoszeń kierowanych błędnie spadł z 18% do 11%. Po wdrożeniu wróciłem do konsultantów z ankietą i 12 rozmowami; na tej podstawie zmieniliśmy sposób pokazywania podpowiedzi.\n2019–2022: Analityk danych, Logiq. Raporty i modele prognozy obciążenia zespołów, analiza lejków klientów.\n2017–2019: Młodszy analityk, firma doradcza.\nUmiejętności: analiza danych (SQL, Python), eksperymenty i testy A/B, discovery z użytkownikami, rozmowy z inżynierami o jakości i kosztach, produkty B2B i procesy operacyjne, praca z LLM przez API (bez trenowania modeli).\nEdukacja: Matematyka stosowana, Politechnika Wrocławska.",
+    "exampleScore": 79,
+    "exampleSummary": "Mocne zaplecze analityczne i doświadczenie w pilocie z grupą kontrolną. Warto porozmawiać o tym, co zostawiono ludziom, a co zautomatyzowano."
+  },
+  {
+    "id": "candidate-jolanta",
+    "role": "candidate",
+    "name": "Jolanta Woźniak",
+    "headline": "Lead Product Manager · wdrożenia AI w procesach operacyjnych",
+    "bio": "Łączę perspektywę wdrożeniową i produktową. Pracuję blisko klientów i zespołów technicznych, a rekomendacje opieram na danych z pilota.",
+    "location": "Warszawa",
+    "cv": "Jolanta Woźniak — Lead Product Manager\n2020–2026: Proxima Solutions, Lead Product Manager (zespół 3 PM). Odpowiadałam za linię produktów do automatyzacji przetwarzania dokumentów dla działów operacyjnych i finansowych (B2B, 20 klientów). Poprowadziłam discovery w 6 firmach: obserwacje pracy, 40 wywiadów, pomiar czasu obsługi i liczby poprawek. Z zespołem wdrożeniowym i inżynierami wybrałam jeden proces do pilota, ustaliłam kryteria odbioru i priorytety. Pilot z 3 klientami skrócił czas przetwarzania dokumentu o 35%, a po wdrożeniu przeprowadziłam przegląd wyniku z użytkownikami. Przedstawiłam zarządowi rekomendację: rozwijamy ekstrakcję danych z dokumentów, poprawiamy walidację, rezygnujemy z automatycznych odpowiedzi do klientów.\n2016–2020: Konsultantka wdrożeniowa, Proxima Solutions. Prowadzenie wdrożeń u klientów, warsztaty z użytkownikami, analiza procesów.\n2013–2016: Specjalistka ds. procesów operacyjnych, firma logistyczna.\nUmiejętności: discovery i warsztaty, analiza danych, priorytetyzacja i zarządzanie zależnościami, współpraca z inżynierami nad jakością i kosztem rozwiązań, procesy operacyjne i finansowe, wdrażanie rozwiązań z modelami językowymi (bez trenowania modeli).\nEdukacja: Zarządzanie i inżynieria produkcji, Politechnika Łódzka.",
+    "exampleScore": 90,
+    "exampleSummary": "Doświadczenie w prowadzeniu produktu od discovery do wdrożenia w B2B i operacjach. Warto porozmawiać o kryteriach wyboru pilota i rezygnacji z części zakresu."
+  },
+  {
     "id": "employer-brightlabs",
     "role": "employer",
     "companyId": "10000000-0000-4000-8000-000000000001",

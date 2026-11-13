@@ -10,6 +10,7 @@ Owner: src/components/record-sheet.tsx; styles: src/app/records.css.
 | ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | label      | Accessible section and tab-list name.                                                                                                                                          |
 | sections   | Nonempty array of unique `{ value, label, content }` entries. Labels are concise; content supplies its section heading and reading content. First section is initially active. |
+| lead       | Optional persistent section above the tabs, outside the changing panels (employer own-work card).                                                                              |
 | attachment | Optional persistent file row outside the changing panels.                                                                                                                      |
 | children   | Optional integrated editor/supporting section, independent of panel mounting.                                                                                                  |
 | footer     | Optional actions or terminal-state explanation.                                                                                                                                |
@@ -29,6 +30,10 @@ Owner: [cv-attachment.tsx](../../src/features/prototype/cv-attachment.tsx).
 | contextLabel | Defaults to “CV z momentu aplikowania”; editable application uses “CV z Twojego profilu”.           |
 
 CvAttachment's `layout="row"` supplies an unboxed icon, filename/context and existing local open/download links. Default `layout="stack"` preserves profile and submitted candidate-detail consumers; the editable application form uses the row composition. `contextLabel` describes the attachment context (default: submitted snapshot; the application form uses “CV z Twojego profilu”). Row-mode custom CVs retain their complete saved text. `preview` adds a titled, framed native PDF iframe beneath the file row, using the exact same local snapshot URL as the file links. Mount this composition inside the CV panel, not the persistent attachment slot: the Answer panel has no CV controls or viewer. Keep open/download links available when the browser cannot display an embedded PDF. No PDF parsing, remote viewer or dependency is added. Only a matching immutable fixture snapshot gets its prepared PDF; custom text snapshots with preview enabled get an explicit text descriptor and their complete text instead of an iframe. Never label a mismatched prepared PDF as the submitted CV.
+
+## OwnWorkCard
+
+Owner: [own-work-card.tsx](../../src/features/prototype/own-work-card.tsx); styles: src/app/records.css. Employer-only host extension for the EXP1 prototype (IDEA2), passed to RecordSheet `lead` by ApplicationRecord when the application has `ownWorkCard`. It is an unboxed H3 section (no extra panel) with a `dl` of own contribution, project and outcome. Each point is a verbatim quote from `rawAnswer` or a secondary Badge “Brak w tekście”, with an optional note (for example the contribution boundary the candidate wrote), then one suggested question. The model rejects a card whose quote is not in the original text. ApplicationRecord adds an “Oryginał” tab with the full raw text only for the employer audience; the candidate view never receives either. `OwnWorkCardCompact` (same file) is the list variant used by the employer “Kandydaci” list: three label/quote rows, no question or notes, complete wrapping. Candidate consent to show the original is not modelled; this is a prototype with fictional data.
 
 ## ProcessTimeline
 

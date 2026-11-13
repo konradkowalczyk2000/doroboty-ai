@@ -1,0 +1,278 @@
+[
+  {
+    "id": "EXP1-1.1",
+    "zestaw": 1,
+    "matchScore": 91,
+    "employerContinued": false,
+    "rawAnswer": "Mam duże doświadczenie w produktach AI. Pracowałem z zespołami nad wdrożeniami automatyzacji i zawsze dbam o wartość biznesową. Lubię łączyć perspektywę użytkownika i technologii.",
+    "assistantAnswer": "Jestem doświadczonym specjalistą od produktów AI, który skutecznie łączy perspektywę użytkownika, technologię i wartość biznesową w projektach automatyzacji.",
+    "card": {
+      "wklad": {
+        "quote": null,
+        "note": "Tekst nie mówi, co kandydat zrobił sam."
+      },
+      "projekt": {
+        "quote": "Pracowałem z zespołami nad wdrożeniami automatyzacji",
+        "note": "Ogólnik, bez nazwy projektu."
+      },
+      "efekt": {
+        "quote": null,
+        "note": "Brak efektu."
+      },
+      "question": "Opisz jedno wdrożenie: co zrobiłeś sam, a co zespół?"
+    }
+  },
+  {
+    "id": "EXP1-1.2",
+    "zestaw": 1,
+    "matchScore": 74,
+    "employerContinued": true,
+    "rawAnswer": "W 2025 sam napisałem pierwszą wersję reguł klasyfikacji zgłoszeń w arkuszu i skrypcie Pythona, zanim dołączył inżynier. Po dwóch miesiącach korzystało z niej 6 osób z działu obsługi. Nie projektowałem interfejsu, to zrobiła koleżanka z zespołu.",
+    "assistantAnswer": "Poprowadziłem rozwój systemu klasyfikacji zgłoszeń, od pierwszej wersji reguł po wdrożenie w dziale obsługi, we współpracy z inżynierami i designerami.",
+    "card": {
+      "wklad": {
+        "quote": "sam napisałem pierwszą wersję reguł klasyfikacji zgłoszeń w arkuszu i skrypcie Pythona",
+        "note": "Granica wkładu: „Nie projektowałem interfejsu”."
+      },
+      "projekt": {
+        "quote": "reguł klasyfikacji zgłoszeń",
+        "note": ""
+      },
+      "efekt": {
+        "quote": "Po dwóch miesiącach korzystało z niej 6 osób z działu obsługi",
+        "note": ""
+      },
+      "question": "Kto dziś utrzymuje te reguły?"
+    }
+  },
+  {
+    "id": "EXP1-1.3",
+    "zestaw": 1,
+    "matchScore": 83,
+    "employerContinued": false,
+    "rawAnswer": "Odpowiadałem za strategię i roadmapę narzędzia do analizy dokumentów. Koordynowałem prace kilku zespołów i adopcję rozwiązania w organizacji. Efektem było usprawnienie procesów i wyższa satysfakcja użytkowników.",
+    "assistantAnswer": "Odpowiadałem za strategię i roadmapę narzędzia do analizy dokumentów, koordynując zespoły i adopcję rozwiązania, co przełożyło się na usprawnienie procesów i satysfakcję użytkowników.",
+    "card": {
+      "wklad": {
+        "quote": "Odpowiadałem za strategię i roadmapę narzędzia do analizy dokumentów",
+        "note": "Rola, nie wiadomo, co kandydat zrobił sam."
+      },
+      "projekt": {
+        "quote": "narzędzia do analizy dokumentów",
+        "note": ""
+      },
+      "efekt": {
+        "quote": "usprawnienie procesów i wyższa satysfakcja użytkowników",
+        "note": "Bez miary i źródła."
+      },
+      "question": "Co z tej roadmapy napisałeś lub zdecydowałeś sam i skąd wiesz, że narzędzie jest używane?"
+    }
+  },
+  {
+    "id": "EXP1-1.4",
+    "zestaw": 1,
+    "matchScore": 88,
+    "employerContinued": false,
+    "rawAnswer": "Wdrożyłem chatbota dla działu HR. Chatbot odpowiada na pytania pracowników o urlopy i benefity. Projekt był bardzo udany.",
+    "assistantAnswer": "Z powodzeniem wdrożyłem chatbota HR, który usprawnił komunikację z pracownikami w zakresie urlopów i benefitów.",
+    "card": {
+      "wklad": {
+        "quote": "Wdrożyłem chatbota dla działu HR",
+        "note": "Nie wiadomo, czy budował sam, czy zlecał."
+      },
+      "projekt": {
+        "quote": "chatbota dla działu HR",
+        "note": ""
+      },
+      "efekt": {
+        "quote": "Projekt był bardzo udany",
+        "note": "Bez miary."
+      },
+      "question": "Kto zbudował chatbota i ilu pracowników z niego korzysta?"
+    }
+  },
+  {
+    "id": "EXP1-1.5",
+    "zestaw": 1,
+    "matchScore": 69,
+    "employerContinued": true,
+    "rawAnswer": "Demo przygotowałem sam w jeden weekend, ale do produkcji wdrażał je zespół platformy i mojego udziału tam już nie było. Użyli go tylko w jednym dziale i po miesiącu go wyłączyli. Najwięcej nauczyłem się z tego, jak nie mierzyć adopcji.",
+    "assistantAnswer": "Zainicjowałem i rozwijałem rozwiązanie AI, które zostało wdrożone przez zespół platformy; z projektu wyniosłem cenne wnioski o mierzeniu adopcji.",
+    "card": {
+      "wklad": {
+        "quote": "Demo przygotowałem sam w jeden weekend",
+        "note": "Granica wkładu: „mojego udziału tam już nie było”."
+      },
+      "projekt": {
+        "quote": null,
+        "note": "Tekst nie mówi, co robiło to demo."
+      },
+      "efekt": {
+        "quote": "Użyli go tylko w jednym dziale i po miesiącu go wyłączyli",
+        "note": "Efekt negatywny, podany wprost."
+      },
+      "question": "Co robiło to demo?"
+    }
+  },
+  {
+    "id": "EXP1-1.6",
+    "zestaw": 1,
+    "matchScore": 77,
+    "employerContinued": false,
+    "rawAnswer": "Prowadziłem 12 rozmów z użytkownikami i na ich podstawie opisałem 5 wymagań do asystenta. Wdrożenie robił zewnętrzny dostawca. Nie wiem, jak asystent działa po wdrożeniu.",
+    "assistantAnswer": "Na podstawie badań z użytkownikami zdefiniowałem wymagania do asystenta AI wdrożonego we współpracy z zewnętrznym dostawcą.",
+    "card": {
+      "wklad": {
+        "quote": "Prowadziłem 12 rozmów z użytkownikami i na ich podstawie opisałem 5 wymagań do asystenta",
+        "note": ""
+      },
+      "projekt": {
+        "quote": "wymagań do asystenta",
+        "note": ""
+      },
+      "efekt": {
+        "quote": null,
+        "note": "Autor sam pisze, że nie zna efektu."
+      },
+      "question": "Czy wiesz, czy wymagania weszły do produktu?"
+    }
+  },
+  {
+    "id": "EXP1-2.1",
+    "zestaw": 2,
+    "matchScore": 90,
+    "employerContinued": false,
+    "rawAnswer": "Jestem entuzjastą AI i od lat pomagam firmom w transformacji cyfrowej. Wiem, jak przekuć nowe technologie w realne efekty. Szybko się uczę i dobrze pracuję w zespole.",
+    "assistantAnswer": "Jako doświadczony ekspert od transformacji cyfrowej skutecznie przekładam technologie AI na mierzalne efekty biznesowe, szybko się ucząc i budując dobre relacje w zespołach.",
+    "card": {
+      "wklad": {
+        "quote": null,
+        "note": "Tekst nie mówi, co kandydat zrobił sam."
+      },
+      "projekt": {
+        "quote": "pomagam firmom w transformacji cyfrowej",
+        "note": "Ogólnik, bez nazwy projektu."
+      },
+      "efekt": {
+        "quote": null,
+        "note": "Brak efektu."
+      },
+      "question": "Opisz jeden projekt AI, w którym brałeś udział: co było Twoją częścią?"
+    }
+  },
+  {
+    "id": "EXP1-2.2",
+    "zestaw": 2,
+    "matchScore": 80,
+    "employerContinued": false,
+    "rawAnswer": "Zarządzałem projektem wdrożenia narzędzia do generowania ofert. Pracowałem z działem sprzedaży i IT. Narzędzie zostało oddane w terminie.",
+    "assistantAnswer": "Poprowadziłem wdrożenie narzędzia AI do generowania ofert, współpracując ze sprzedażą i IT i dostarczając rozwiązanie w terminie.",
+    "card": {
+      "wklad": {
+        "quote": "Zarządzałem projektem wdrożenia narzędzia do generowania ofert",
+        "note": "Zarządzanie, nie wiadomo, co zrobił sam."
+      },
+      "projekt": {
+        "quote": "narzędzia do generowania ofert",
+        "note": ""
+      },
+      "efekt": {
+        "quote": "Narzędzie zostało oddane w terminie",
+        "note": "Termin, nie użycie."
+      },
+      "question": "Czy handlowcy używali narzędzia po oddaniu i ilu?"
+    }
+  },
+  {
+    "id": "EXP1-2.3",
+    "zestaw": 2,
+    "matchScore": 72,
+    "employerContinued": true,
+    "rawAnswer": "Sam zbudowałem w Make scenariusz, który przepisuje maile od klientów do CRM. Używa go dziś cały dział, około 15 osób, oszczędność to ok. 4 godzin tygodniowo na osobę, mierzone przez ich własne zgłoszenia. Konfigurację wyjątków robił jednak kolega z IT.",
+    "assistantAnswer": "Wdrożyłem automatyzację przepisywania wiadomości od klientów do CRM, która oszczędza zespołowi czas i usprawnia pracę działu.",
+    "card": {
+      "wklad": {
+        "quote": "Sam zbudowałem w Make scenariusz, który przepisuje maile od klientów do CRM",
+        "note": "Granica wkładu: „Konfigurację wyjątków robił jednak kolega z IT”."
+      },
+      "projekt": {
+        "quote": "przepisuje maile od klientów do CRM",
+        "note": ""
+      },
+      "efekt": {
+        "quote": "Używa go dziś cały dział, około 15 osób, oszczędność to ok. 4 godzin tygodniowo na osobę",
+        "note": ""
+      },
+      "question": "Jak mierzono oszczędność czasu?"
+    }
+  },
+  {
+    "id": "EXP1-2.4",
+    "zestaw": 2,
+    "matchScore": 86,
+    "employerContinued": false,
+    "rawAnswer": "Odpowiadałem za wprowadzenie Copilota w firmie. Szkoliłem pracowników i budowałem kulturę pracy z AI. Zespoły są zadowolone.",
+    "assistantAnswer": "Poprowadziłem wdrożenie Copilota w organizacji, wspierając pracowników szkoleniami i budując kulturę pracy z AI, co spotkało się z wysokim zadowoleniem zespołów.",
+    "card": {
+      "wklad": {
+        "quote": "Szkoliłem pracowników",
+        "note": ""
+      },
+      "projekt": {
+        "quote": "wprowadzenie Copilota w firmie",
+        "note": ""
+      },
+      "efekt": {
+        "quote": "Zespoły są zadowolone",
+        "note": "Bez miary."
+      },
+      "question": "Ilu pracowników przeszkoliłeś i czy korzystają z Copilota po szkoleniu?"
+    }
+  },
+  {
+    "id": "EXP1-2.5",
+    "zestaw": 2,
+    "matchScore": 65,
+    "employerContinued": false,
+    "rawAnswer": "Prowadziłem zespół analityków przy projekcie scoringu leadów, ale model zbudowali analitycy. Ja ustalałem priorytety i pilnowałem harmonogramu. Nie wiem, czy handlowcy używali wyniku po moim odejściu.",
+    "assistantAnswer": "Kierowałem zespołem analityków w projekcie scoringu leadów, odpowiadając za priorytety i harmonogram.",
+    "card": {
+      "wklad": {
+        "quote": "Ja ustalałem priorytety i pilnowałem harmonogramu",
+        "note": "Granica wkładu: „model zbudowali analitycy”."
+      },
+      "projekt": {
+        "quote": "projekcie scoringu leadów",
+        "note": ""
+      },
+      "efekt": {
+        "quote": null,
+        "note": "Autor sam pisze, że nie zna efektu."
+      },
+      "question": "Czy wiesz, czy handlowcy zmienili sposób pracy dzięki scoringowi?"
+    }
+  },
+  {
+    "id": "EXP1-2.6",
+    "zestaw": 2,
+    "matchScore": 71,
+    "employerContinued": true,
+    "rawAnswer": "Napisałem sam instrukcje i 40 przykładowych odpowiedzi dla asystenta wsparcia, potem przez miesiąc co tydzień poprawiałem je po uwagach konsultantów. Liczba eskalacji spadła z 31% do 22% według raportu z systemu zgłoszeń. Nie byłem właścicielem integracji z systemem.",
+    "assistantAnswer": "Wdrożyłem i optymalizowałem asystenta wsparcia, co przełożyło się na wyraźny spadek liczby eskalacji.",
+    "card": {
+      "wklad": {
+        "quote": "Napisałem sam instrukcje i 40 przykładowych odpowiedzi dla asystenta wsparcia",
+        "note": "Granica wkładu: „Nie byłem właścicielem integracji z systemem”."
+      },
+      "projekt": {
+        "quote": "asystenta wsparcia",
+        "note": ""
+      },
+      "efekt": {
+        "quote": "Liczba eskalacji spadła z 31% do 22% według raportu z systemu zgłoszeń",
+        "note": ""
+      },
+      "question": "Kto dziś utrzymuje instrukcje asystenta?"
+    }
+  }
+]

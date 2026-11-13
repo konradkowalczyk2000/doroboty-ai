@@ -4,6 +4,7 @@ import { ProcessTimeline } from "@/components/process-timeline";
 import { RecordSheet } from "@/components/record-sheet";
 import { CvAttachment } from "./cv-attachment";
 import { MatchScore } from "./match-score";
+import { OwnWorkCard } from "./own-work-card";
 import { stageLabels, type Application, type Stage } from "./model";
 
 type RecordEvent = { stage: Stage; at: string; note?: string };
@@ -24,7 +25,17 @@ export function ApplicationRecord({
 }: {
   application: Pick<
     Application,
-    "candidateId" | "candidateName" | "jobTitle" | "stage" | "answer" | "cv" | "score" | "summary"
+    | "candidateId"
+    | "candidateName"
+    | "jobTitle"
+    | "stage"
+    | "answer"
+    | "cv"
+    | "score"
+    | "summary"
+    | "rawAnswer"
+    | "scopeAnswers"
+    | "ownWorkCard"
   >;
   companyName: string;
   audience: "candidate" | "employer";
@@ -37,6 +48,8 @@ export function ApplicationRecord({
   const title = candidate ? application.jobTitle : application.candidateName;
   const context = candidate ? application.candidateName : application.jobTitle;
   const submitted = history[0];
+  const card = candidate ? undefined : application.ownWorkCard;
+  const original = candidate ? undefined : application.rawAnswer;
   return (
     <article className="recruiting-record">
       <header className="recruiting-header">
@@ -67,6 +80,7 @@ export function ApplicationRecord({
       <div className="recruiting-layout">
         <RecordSheet
           label={candidate ? "Twoja wysłana aplikacja" : "Materiały kandydata"}
+          lead={card ? <OwnWorkCard card={card} /> : undefined}
           sections={[
             {
               value: "answer",
@@ -75,6 +89,19 @@ export function ApplicationRecord({
                 <>
                   <h3>Przesłana aplikacja</h3>
                   <p>{application.answer}</p>
+                  {application.scopeAnswers?.length ? (
+                    <>
+                      <h3>Odpowiedzi na pytania rekrutera</h3>
+                      <dl className="scope-answers">
+                        {application.scopeAnswers.map((item) => (
+                          <div key={item.questionId}>
+                            <dt>{item.question}</dt>
+                            <dd>{item.answer}</dd>
+                          </div>
+                        ))}
+                      </dl>
+                    </>
+                  ) : null}
                 </>
               ),
             },
@@ -93,6 +120,20 @@ export function ApplicationRecord({
                 </>
               ),
             },
+            ...(original
+              ? [
+                  {
+                    value: "original",
+                    label: "Oryginał",
+                    content: (
+                      <>
+                        <h3>Tekst oryginalny (przed asystentem)</h3>
+                        <p>{original}</p>
+                      </>
+                    ),
+                  },
+                ]
+              : []),
           ]}
           footer={footer}
         >
