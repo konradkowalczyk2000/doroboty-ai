@@ -2,7 +2,7 @@
 
 Purpose: a short manual check right after a build of this static prototype is published, so a broken release is caught before participants use it. Pass/fail results are recorded per release in the table at the end; this file is the plan, not a record of any run.
 
-Fill in before the first release: `DEPLOYED_URL` (the exact published address) and the previous known-good deployment or commit used for rollback.
+`DEPLOYED_URL` is https://konrad-doroboty-ai.netlify.app. Rollback target for the first release: the Netlify deploy `6af6fec7ee29bf1994c74bbb`, which is live before the first manual publication; afterwards use the last deploy that passed this plan. Publish and rollback steps are in [release-procedure.md](release-procedure.md).
 
 ## When
 
@@ -17,15 +17,16 @@ After every publication of `dist/`, and again after a rollback. Takes about ten 
 5. Choose an employer persona (for example Karolina or Tomasz). The submitted application is visible under candidates and a decision can be recorded.
 6. Reload. The application and the decision are still there (browser-local save works).
 7. Open `/#/app/settings`: export downloads a JSON file; reset asks for confirmation (do not confirm on a shared demo unless intended).
-8. Open the browser developer tools, Network tab, and reload the homepage: all requests go to the published address only; no failed (red) requests and no requests to other sites.
-9. Confirm which version is published: the commit or build identifier you released matches the one you intended to publish.
+8. Open an example CV from a job application: the PDF preview shows inside the page (the security headers allow same-site frames and objects; if it is blank, check the console for a Content-Security-Policy message and roll back).
+9. Open the browser developer tools, Network tab, and reload the homepage: all requests go to the published address only; no failed (red) requests and no requests to other sites.
+10. Confirm which version is published: the commit or build identifier you released matches the one you intended to publish.
 
 ## Rollback condition
 
-If any of steps 1-8 fails and cannot be explained within a few minutes, return to the previous known-good deployment (hosting-specific procedure to be written once the hosting is chosen), repeat steps 1-3 on it and tell participants what happened.
+If any of steps 1-9 fails and cannot be explained within a few minutes, return to the previous known-good deployment (Netlify: see the Roll back section of [release-procedure.md](release-procedure.md)), repeat steps 1-3 on it and tell participants what happened.
 
 ## Record per release
 
-| Date | Published commit or build | DEPLOYED_URL | Checked by | Steps 1-9 result | Notes |
-| ---- | ------------------------- | ------------ | ---------- | ---------------- | ----- |
-|      |                           |              |            |                  |       |
+| Date | Published commit or build | DEPLOYED_URL | Checked by | Steps 1-10 result | Notes |
+| ---- | ------------------------- | ------------ | ---------- | ----------------- | ----- |
+|      |                           |              |            |                   |       |
