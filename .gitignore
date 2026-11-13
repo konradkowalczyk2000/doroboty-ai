@@ -10,3 +10,4 @@ artifacts/
 npm-debug.log*
 build-2026*
 test-2026*
+.env

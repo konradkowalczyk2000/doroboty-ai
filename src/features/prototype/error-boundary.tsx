@@ -1,4 +1,5 @@
-import { Component, type ReactNode } from "react";
+import { Component, type ErrorInfo, type ReactNode } from "react";
+import posthog from "posthog-js";
 import { ErrorScreen } from "./error-screen";
 import { downloadText } from "./settings";
 import { STORAGE_KEY } from "./storage";
@@ -19,6 +20,17 @@ export class ErrorBoundary extends Component<{ children: ReactNode }, State> {
 
   static getDerivedStateFromError(): State {
     return { failed: true };
+  }
+
+  componentDidCatch(error: Error, errorInfo: ErrorInfo) {
+    if (
+      import.meta.env.VITE_PUBLIC_POSTHOG_PROJECT_TOKEN &&
+      import.meta.env.VITE_PUBLIC_POSTHOG_HOST
+    )
+      posthog.captureException(error, {
+        error_boundary: "prototype",
+        component_stack: errorInfo.componentStack,
+      });
   }
 
   render() {
